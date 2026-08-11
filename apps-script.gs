@@ -17,7 +17,7 @@ const FECHA_CORTE = '2026-11-20T23:59:59';
 
 // Dirección donde está publicada la invitación, sin barra final.
 // Se usa solo para armar los enlaces de WhatsApp (generarEnlacesWhatsapp).
-const URL_INVITACION = 'https://ejemplo.pages.dev';
+const URL_INVITACION = 'https://ailecomar.weeding.workers.dev';
 
 const HOJA_INVITADOS = 'Invitados';
 const HOJA_RESUMEN = 'Resumen';
