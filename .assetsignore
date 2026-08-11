@@ -1,0 +1,9 @@
+.git/
+.github/
+.claude/
+node_modules/
+wrangler.toml
+.gitignore
+.assetsignore
+*.md
+apps-script.gs
