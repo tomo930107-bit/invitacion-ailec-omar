@@ -17,7 +17,8 @@
       "Bash(grep -n \"width: *[0-9]\\\\{3,\\\\}px\\\\|min-width: *[0-9]\\\\{3,\\\\}px\" style.css)",
       "Bash(node --check script.js)",
       "Bash(git init *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git config *)"
     ]
   }
 }

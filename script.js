@@ -258,13 +258,27 @@ async function enviarDatos(datos) {
 }
 
 /* ------------------------------------------------------------------
-   Invitado: el código viene en el enlace personal (?c=XXXXXX).
-   La hoja responde solo con SU nombre y SUS boletos.
+   Invitado: el token viene en el enlace personal (?i=xxxxxxxx).
+   La hoja responde solo con SUS datos (ver rsvp-api.js).
 ------------------------------------------------------------------ */
-const CODIGO_INVITADO = (new URLSearchParams(location.search).get('c') || '')
-  .replace(/[^A-Za-z0-9]/g, '')
-  .toUpperCase()
-  .slice(0, 12);
+const TOKEN_INVITADO = (new URLSearchParams(location.search).get('i') || '')
+  .toLowerCase()
+  .replace(/[^a-z0-9]/g, '')
+  .slice(0, 8);
+
+const MENSAJES_ERROR_RSVP = {
+  NO_ENCONTRADO: 'No pudimos reconocer tu enlace de invitación. Escríbenos y lo revisamos contigo.',
+  TOKEN_INVALIDO: 'No pudimos reconocer tu enlace de invitación. Escríbenos y lo revisamos contigo.',
+  CERRADO: 'El plazo para confirmar ya cerró. Si necesitas hacer un cambio, escríbenos directamente.',
+  EXCEDE_MAX: 'Ese número de pases excede los que tienes asignados. Ajusta la cantidad e inténtalo de nuevo.',
+  DATOS_INVALIDOS: 'Algo no cuadró con tu confirmación. Inténtalo de nuevo.',
+  TIMEOUT: 'La conexión tardó demasiado. Revisa tu internet e inténtalo de nuevo.',
+  ERROR_INTERNO: 'No pudimos procesar tu confirmación en este momento. Inténtalo más tarde.',
+};
+
+function mensajeErrorRsvp(codigo) {
+  return MENSAJES_ERROR_RSVP[codigo] || MENSAJES_ERROR_RSVP.ERROR_INTERNO;
+}
 
 async function cargarInvitado() {
   const bloque = document.getElementById('rsvp-invitado');
@@ -279,53 +293,66 @@ async function cargarInvitado() {
     form.hidden = true;
   };
 
-  if (!CODIGO_INVITADO) {
+  if (!TOKEN_INVITADO) {
     return mostrarAviso(
-      'Para confirmar, abre la invitación desde el enlace personal que te enviamos. ' +
+      'Consulta tu invitación personalizada en el enlace que te enviamos. ' +
       'Si no lo encuentras, escríbenos y con gusto te lo reenviamos.'
     );
   }
 
+  // Estado de carga: nunca dejar el bloque vacío mientras responde el servidor.
+  mostrarAviso('Cargando tu invitación…');
+
   try {
-    const res = await fetch(ENDPOINT_DATOS + '?c=' + encodeURIComponent(CODIGO_INVITADO));
-    const datos = await res.json();
+    const datos = await lookupInvitado(TOKEN_INVITADO);
 
-    if (!datos.ok) {
-      return mostrarAviso(
-        'No pudimos reconocer tu enlace de invitación. Escríbenos y lo revisamos contigo.'
-      );
-    }
-
-    document.getElementById('rsvp-invitado-nombre').textContent = datos.nombre;
-    document.getElementById('rsvp-boletos-num').textContent = datos.boletos;
+    document.getElementById('rsvp-invitado-nombre').textContent = datos.nombre_display;
+    document.getElementById('rsvp-boletos-num').textContent = datos.pases_max;
     document.getElementById('rsvp-boletos-texto').textContent =
-      datos.boletos === 1 ? 'lugar reservado' : 'lugares reservados';
+      datos.pases_max === 1 ? 'lugar reservado' : 'lugares reservados';
 
-    // El selector se arma con los boletos asignados: no hay forma de elegir más.
+    // El selector se arma con los pases asignados: no hay forma de elegir más.
     const selector = document.getElementById('rsvp-asistentes');
     selector.innerHTML = '';
-    for (let i = 1; i <= datos.boletos; i++) {
+    for (let i = 1; i <= datos.pases_max; i++) {
       const op = document.createElement('option');
       op.value = String(i);
       op.textContent = i === 1 ? '1 persona' : i + ' personas';
       selector.appendChild(op);
     }
-    selector.value = String(datos.boletos);
+
+    const asistenciaSelect = document.getElementById('rsvp-asistencia');
+    const campoAsistentes = document.getElementById('campo-asistentes');
+    const boton = form.querySelector('button[type="submit"]');
+    const yaRespondio = datos.estatus === 'confirmado' || datos.estatus === 'no_asiste';
+
+    if (yaRespondio) {
+      asistenciaSelect.value = datos.estatus === 'confirmado' ? 'si' : 'no';
+      if (campoAsistentes) campoAsistentes.hidden = datos.estatus !== 'confirmado';
+      selector.value = String(datos.pases_confirmados || datos.pases_max);
+      boton.textContent = 'Actualizar mi confirmación';
+      mostrarEstado(
+        document.getElementById('rsvp-estado'),
+        `Ya tenemos tu confirmación: ${datos.pases_confirmados} de ${datos.pases_max} pases. Si algo cambió, puedes actualizarla.`,
+        'ok'
+      );
+    } else {
+      selector.value = String(datos.pases_max);
+    }
+
+    if (!datos.editable) {
+      asistenciaSelect.disabled = true;
+      selector.disabled = true;
+      boton.disabled = true;
+      mostrarEstado(document.getElementById('rsvp-estado'), 'El plazo para confirmar o editar tu respuesta ya cerró.', 'error');
+    }
 
     bloque.hidden = false;
     form.hidden = false;
     aviso.hidden = true;
-
-    if (datos.yaConfirmo !== null && datos.yaConfirmo !== undefined) {
-      mostrarEstado(
-        document.getElementById('rsvp-estado'),
-        'Ya tenemos tu confirmación registrada. Si algo cambió, puedes enviarla de nuevo.',
-        'ok'
-      );
-    }
   } catch (err) {
     console.error(err);
-    mostrarAviso('No pudimos cargar tu invitación en este momento. Inténtalo más tarde.');
+    mostrarAviso(mensajeErrorRsvp(err.codigo));
   }
 }
 
@@ -358,7 +385,7 @@ document.getElementById('song-form')?.addEventListener('submit', async (e) => {
     await enviarDatos({
       tipo: 'cancion',
       cancion,
-      codigo: CODIGO_INVITADO,
+      codigo: TOKEN_INVITADO,
       website: form.querySelector('[name="website"]').value,
     });
 
@@ -399,32 +426,35 @@ document.getElementById('rsvp-form')?.addEventListener('submit', async (e) => {
   if (!asistencia) {
     return mostrarEstado(estado, 'Indícanos si podrás acompañarnos.', 'error');
   }
+  if (form.querySelector('[name="website"]').value) return; // campo trampa
   if (!puedeEnviar('ultimo-rsvp')) {
     return mostrarEstado(estado, 'Ya recibimos tu confirmación hace un momento.', 'error');
   }
 
+  const textoOriginalBoton = boton.textContent;
   boton.disabled = true;
+  boton.textContent = 'Enviando…';
   mostrarEstado(estado, 'Enviando…');
 
   try {
-    const res = await enviarDatos({
-      tipo: 'rsvp',
-      codigo: CODIGO_INVITADO,
-      asistencia,
-      asistentes,
-      website: form.querySelector('[name="website"]').value,
+    const datos = await enviarRsvp({
+      token: TOKEN_INVITADO,
+      asiste: asistencia === 'si',
+      pases: asistencia === 'si' ? parseInt(asistentes, 10) : 0,
     });
 
     registrarEnvio('ultimo-rsvp');
+    boton.textContent = 'Actualizar mi confirmación';
     mostrarEstado(
       estado,
-      asistencia === 'si'
-        ? `¡Gracias por confirmar! Los esperamos: ${res.asistentes} ${res.asistentes === 1 ? 'lugar' : 'lugares'}.`
+      datos.estatus === 'confirmado'
+        ? `Confirmado: ${datos.pases_confirmados} de ${datos.pases_max} pases. ¡Los esperamos!`
         : 'Gracias por avisarnos, te vamos a extrañar.',
       'ok'
     );
   } catch (err) {
-    mostrarEstado(estado, 'No pudimos registrar tu confirmación. Inténtalo de nuevo.', 'error');
+    boton.textContent = textoOriginalBoton;
+    mostrarEstado(estado, mensajeErrorRsvp(err.codigo), 'error');
     console.error(err);
   } finally {
     boton.disabled = false;

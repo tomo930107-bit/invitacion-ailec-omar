@@ -60,22 +60,3 @@ function enviarRsvp(payload) {
     body: JSON.stringify({ action: 'rsvp', ...payload }),
   });
 }
-
-/* ------------------------------------------------------------------
-   Prueba manual de Fase 2: si la URL trae ?i=token, se hace un lookup
-   y se muestra el resultado en consola. No toca el DOM ni la UI — eso
-   llega en la Fase 3. Se puede borrar este bloque en ese momento.
------------------------------------------------------------------- */
-(function pruebaLookup() {
-  const token = (new URLSearchParams(location.search).get('i') || '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]/g, '')
-    .slice(0, 8);
-
-  if (!token) return;
-
-  console.log('[rsvp-api] probando lookupInvitado con token:', token);
-  lookupInvitado(token)
-    .then(data => console.log('[rsvp-api] lookup OK', data))
-    .catch(err => console.warn('[rsvp-api] lookup ERROR', err.codigo || err.message));
-})();
