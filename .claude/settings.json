@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import PIL; print\\('PIL', PIL.__version__\\)\")",
+      "Bash(magick -version)",
+      "Bash(python transparencia.py)",
+      "Bash(python -c ' *)",
+      "Bash(python arreglar_regex.py)",
+      "Bash(curl -s -L -o respuesta.txt -w \"HTTP %{http_code} | tipo: %{content_type} | bytes: %{size_download}\\\\n\" \"https://script.google.com/macros/s/AKfycbz18Ybt26ubAgW68b6FelAIci1tJU9oBBXwWFlTLThbdb5lOMBiJgqA3-eRqkwfTmho/exec\")",
+      "Bash(curl -s -I -H \"Origin: https://ejemplo.com\" \"https://script.google.com/macros/s/AKfycbz18Ybt26ubAgW68b6FelAIci1tJU9oBBXwWFlTLThbdb5lOMBiJgqA3-eRqkwfTmho/exec?c=PRUEBA\")",
+      "Bash(curl -s -L -D - -o /dev/null -H \"Origin: https://ejemplo.com\" \"https://script.google.com/macros/s/AKfycbz18Ybt26ubAgW68b6FelAIci1tJU9oBBXwWFlTLThbdb5lOMBiJgqA3-eRqkwfTmho/exec?c=PRUEBA\")",
+      "Bash(curl -s -L -D - -o cuerpoA.txt __TRACKED_VAR__?c=PRUEBA)",
+      "Bash(curl -s \"https://ailecomar.weeding.workers.dev/\" -o host-index.html -w \"index.html: HTTP %{http_code}, %{size_download} bytes\\\\n\")",
+      "Bash(curl -s \"https://ailecomar.weeding.workers.dev/style.css\" -o host-style.css -w \"style.css:  HTTP %{http_code}, %{size_download} bytes\\\\n\")",
+      "Bash(xargs echo \"index.html local:\")",
+      "Bash(xargs echo \"style.css local:\")",
+      "Bash(grep -n \"width: *[0-9]\\\\{3,\\\\}px\\\\|min-width: *[0-9]\\\\{3,\\\\}px\" style.css)",
+      "Bash(node --check script.js)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}

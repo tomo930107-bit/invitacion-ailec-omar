@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ailec & Omar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Pantalla de sobre -->
+  <div id="envelope-screen">
+    <button id="envelope-btn" aria-label="Abrir invitación">
+      <img id="envelope-img" src="assets/sobre-inicio.jpg" alt="Sobre lacrado con las iniciales A O">
+      <span class="envelope-hint">Toca para abrir</span>
+    </button>
+  </div>
+
+  <!-- Sitio principal -->
+  <div id="site" class="hidden">
+
+    <button id="home-btn" aria-label="Menú">⌂</button>
+    <button id="audio-btn" aria-label="Reproducir música" title="Reproducir música">
+      <svg class="icono-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5 L19 12 L8 19 Z"/></svg>
+      <svg class="icono-pausa" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="7" y="5" width="3.4" height="14" rx="1.2"/>
+        <rect x="13.6" y="5" width="3.4" height="14" rx="1.2"/>
+      </svg>
+    </button>
+
+    <nav id="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#itinerario">Itinerario</a>
+      <a href="#ubicaciones">Ubicaciones</a>
+      <a href="#galeria">Galería de Fotos</a>
+      <a href="#regalos">Mesa de Regalos</a>
+      <a href="#vestimenta">Código de Vestimenta</a>
+      <a href="#canciones">Canciones</a>
+      <a href="#contacto">Contactos</a>
+    </nav>
+
+    <!-- INICIO -->
+    <section id="inicio" class="hero">
+      <div class="hero-bg"></div>
+      <h1 class="hero-names">Ailec &amp; Omar</h1>
+      <figure class="cita-card reveal">
+        <span class="cita-ornamento" aria-hidden="true"></span>
+        <blockquote class="cita-texto">
+          Así que ya no son dos, sino uno solo. Por tanto, lo que Dios ha unido,
+          que no lo separe el hombre.
+        </blockquote>
+        <figcaption class="cita-fuente">Mateo 19:6</figcaption>
+        <span class="cita-ornamento" aria-hidden="true"></span>
+      </figure>
+    </section>
+
+    <!-- FRASE DESTACADA -->
+    <section id="frase" class="block phrase-block">
+      <div class="phrase-card reveal">
+        <p>El día más importante de nuestras vidas ha llegado.</p>
+      </div>
+    </section>
+
+    <!-- SEGUNDA IMAGEN -->
+    <section id="imagen2" class="hero hero-secondary reveal">
+      <div class="hero-bg"></div>
+      <div class="hero-secondary-copy">
+        <h2>¡Nos casamos!</h2>
+        <p class="hero-secondary-date">18 de diciembre del 2026</p>
+        <div class="timer timer-secondary">
+          <div class="timer-card reveal"><span id="cd-days">00</span><small>Días</small></div>
+          <div class="timer-card reveal"><span id="cd-hours">00</span><small>Hrs</small></div>
+          <div class="timer-card reveal"><span id="cd-min">00</span><small>Min</small></div>
+          <div class="timer-card reveal"><span id="cd-sec">00</span><small>Seg</small></div>
+        </div>
+        <button id="add-calendar-btn" class="btn calendar-btn reveal">Agregar a calendario</button>
+      </div>
+    </section>
+
+    <!-- PADRES -->
+    <section id="padres" class="block padres-section">
+      <div class="padres-grid">
+        <div class="padres-card reveal">
+          <p class="padres-eyebrow">Con la bendición de nuestros padres</p>
+
+          <p class="padres-role">Padres de la novia</p>
+          <p class="padres-name">Juan Lopez <span class="cross" title="En memoria">✝</span></p>
+          <p class="padres-name">Rosalva Preciado</p>
+
+          <p class="padres-role">Padres del novio</p>
+          <p class="padres-name">Felipe Torres</p>
+          <p class="padres-name">Lidia Mijares</p>
+
+          <svg class="couple-vector couple-vector--wide" viewBox="0 0 200 140" role="img" aria-label="Ilustración de la pareja tomada de la mano junto a su perrito">
+            <!-- pareja tomada de la mano -->
+            <g class="pv-line" transform="translate(-20 0)">
+              <!-- él -->
+              <circle cx="70" cy="32" r="11"/>
+              <path d="M54 94 C54 66 60 54 70 54 C80 54 86 66 86 94"/>
+              <path d="M70 54 L64 70 M70 54 L76 70"/>
+              <path d="M70 72 L70 92"/>
+              <path d="M66 59 L70 62 L74 59"/>
+              <path d="M60 94 L58 126 M80 94 L82 126"/>
+              <path d="M86 72 C94 76 100 78 106 81"/>
+              <!-- ella -->
+              <circle cx="132" cy="34" r="10"/>
+              <circle cx="143" cy="31" r="5"/>
+              <path d="M144 34 C154 44 152 72 146 98"/>
+              <path d="M132 54 C138 54 141 60 142 70 M132 54 C126 54 123 60 122 70"/>
+              <path d="M122 70 C118 90 112 112 108 126 L156 126 C152 112 146 90 142 70"/>
+              <path d="M122 67 C116 71 111 77 106 81"/>
+              <path d="M142 68 C148 73 150 79 150 84"/>
+              <circle cx="150" cy="89" r="5"/>
+              <circle cx="144" cy="93" r="4"/>
+              <circle cx="156" cy="93" r="4"/>
+            </g>
+            <!-- perrito -->
+            <g transform="translate(10 0)">
+              <path class="pv-fill" d="M152 108 C160 103 172 105 176 113 C179 120 174 127 166 126 L157 126 C151 124 149 116 152 108 Z"/>
+              <path class="pv-fill" d="M145 98 C151 98 155 103 155 109 C155 115 150 119 144 118 C138 118 135 113 136 107 C137 101 140 98 145 98 Z"/>
+              <g class="pv-line">
+                <path d="M139 101 C133 104 132 113 136 119 C139 121 141 118 141 114"/>
+                <path d="M152 101 C158 104 159 113 155 119 C152 121 150 118 150 114"/>
+                <path d="M142 97 C141 92 147 91 148 95"/>
+                <path d="M145 114 C143 116 141 116 140 115 M147 114 C149 116 151 116 152 115"/>
+                <path d="M158 126 L158 129 M170 126 L170 129"/>
+                <path d="M176 111 C181 105 182 99 178 96 C175 98 176 103 174 106"/>
+              </g>
+              <circle class="pv-dot" cx="142" cy="108" r="1.3"/>
+              <circle class="pv-dot" cx="149" cy="108" r="1.3"/>
+              <circle class="pv-dot" cx="145.5" cy="112" r="1.9"/>
+            </g>
+            <!-- suelo -->
+            <path class="pv-line pv-ground" d="M34 129 L192 129"/>
+          </svg>
+        </div>
+        <div class="padres-photo reveal">
+          <img src="assets/padresimagen.jpg" alt="Padres">
+        </div>
+      </div>
+    </section>
+
+    <!-- SEPARACIÓN PADRES / PADRINOS -->
+    <div class="section-gap" aria-hidden="true"></div>
+
+    <!-- PADRINOS -->
+    <section id="padrinos" class="block padres-section">
+      <div class="padres-grid">
+        <div class="padres-card reveal">
+          <p class="padres-eyebrow">Nuestros padrinos</p>
+
+          <p class="padres-role">Velación</p>
+          <p class="padres-name">Jaime Garagarza</p>
+          <p class="padres-name">Rosa Iñiguez</p>
+
+          <svg class="couple-vector" viewBox="0 0 200 140" role="img" aria-label="Ilustración de los padrinos de velación">
+            <!-- corazón entre ambos -->
+            <path class="pv-heart" d="M101 20 C98 14 91 15 91 21 C91 27 101 33 101 33 C101 33 111 27 111 21 C111 15 104 14 101 20 Z"/>
+            <g class="pv-line">
+              <!-- él -->
+              <circle cx="70" cy="32" r="11"/>
+              <path d="M54 94 C54 66 60 54 70 54 C80 54 86 66 86 94"/>
+              <path d="M70 54 L64 70 M70 54 L76 70"/>
+              <path d="M70 72 L70 92"/>
+              <path d="M66 59 L70 62 L74 59"/>
+              <path d="M60 94 L58 126 M80 94 L82 126"/>
+              <path d="M86 72 C94 76 100 78 106 81"/>
+              <!-- ella -->
+              <circle cx="132" cy="34" r="10"/>
+              <circle cx="143" cy="31" r="5"/>
+              <path d="M144 34 C154 44 152 72 146 98"/>
+              <path d="M132 54 C138 54 141 60 142 70 M132 54 C126 54 123 60 122 70"/>
+              <path d="M122 70 C118 90 112 112 108 126 L156 126 C152 112 146 90 142 70"/>
+              <path d="M122 67 C116 71 111 77 106 81"/>
+              <path d="M142 68 C148 73 150 79 150 84"/>
+              <circle cx="150" cy="89" r="5"/>
+              <circle cx="144" cy="93" r="4"/>
+              <circle cx="156" cy="93" r="4"/>
+              <!-- suelo -->
+              <path class="pv-ground" d="M42 129 L164 129"/>
+            </g>
+          </svg>
+        </div>
+        <div class="padres-photo reveal">
+          <img src="assets/padrinosimagen.jpg" alt="Padrinos">
+        </div>
+      </div>
+    </section>
+
+    <!-- ITINERARIO -->
+    <section id="itinerario" class="block timeline-section">
+      <div class="timeline-card">
+      <h2 class="reveal timeline-title">Itinerario</h2>
+      <div class="timeline-vertical">
+
+        <div class="timeline-row reveal">
+          <div class="timeline-text"></div>
+          <div class="timeline-node">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="32" y1="4" x2="32" y2="15"/>
+              <line x1="26" y1="9" x2="38" y2="9"/>
+              <path d="M13 31 L32 15 L51 31"/>
+              <rect x="17" y="31" width="30" height="23"/>
+              <rect x="27" y="40" width="10" height="14"/>
+              <line x1="10" y1="54" x2="54" y2="54"/>
+            </svg>
+          </div>
+          <div class="timeline-text">
+            <p class="timeline-event">Ceremonia</p>
+            <span class="timeline-time">5:00 PM</span>
+          </div>
+        </div>
+
+        <div class="timeline-connector"></div>
+
+        <div class="timeline-row reveal">
+          <div class="timeline-text">
+            <p class="timeline-event">Recepción</p>
+            <span class="timeline-time">8:00 PM</span>
+          </div>
+          <div class="timeline-node">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 12 C10 22 16 27 20 27 C24 27 30 22 30 12"/>
+              <line x1="20" y1="27" x2="20" y2="46"/>
+              <line x1="14" y1="46" x2="26" y2="46"/>
+              <path d="M34 12 C34 22 40 27 44 27 C48 27 54 22 54 12"/>
+              <line x1="44" y1="27" x2="44" y2="46"/>
+              <line x1="38" y1="46" x2="50" y2="46"/>
+              <line x1="30" y1="12" x2="34" y2="12"/>
+            </svg>
+          </div>
+          <div class="timeline-text"></div>
+        </div>
+
+        <div class="timeline-connector"></div>
+
+        <div class="timeline-row reveal">
+          <div class="timeline-text"></div>
+          <div class="timeline-node">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="32" cy="9" r="1.6" fill="currentColor" stroke="none"/>
+              <line x1="32" y1="12" x2="32" y2="17"/>
+              <path d="M13 38 C13 24 21 17 32 17 C43 17 51 24 51 38 Z"/>
+              <ellipse cx="32" cy="44" rx="26" ry="6"/>
+            </svg>
+          </div>
+          <div class="timeline-text">
+            <p class="timeline-event">Cena</p>
+            <span class="timeline-time">9:00 PM</span>
+          </div>
+        </div>
+
+        <div class="timeline-connector"></div>
+
+        <div class="timeline-row reveal">
+          <div class="timeline-text">
+            <p class="timeline-event">Fiesta</p>
+            <span class="timeline-time">10:30 PM</span>
+          </div>
+          <div class="timeline-node">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="32" cy="32" r="20"/>
+              <circle cx="32" cy="32" r="7"/>
+              <circle cx="32" cy="32" r="1.5" fill="currentColor" stroke="none"/>
+              <path d="M50 12 L52 16 L56 18 L52 20 L50 24 L48 20 L44 18 L48 16 Z" fill="currentColor" stroke="none"/>
+              <path d="M13 45 L14.5 47.5 L17 49 L14.5 50.5 L13 53 L11.5 50.5 L9 49 L11.5 47.5 Z" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <div class="timeline-text"></div>
+        </div>
+
+      </div>
+      </div>
+    </section>
+
+    <!-- UBICACIONES: TEMPLO -->
+    <section id="ubicaciones" class="block venue-section">
+      <div class="venue-card reveal">
+        <div class="venue-text">
+          <p class="venue-label">Ceremonia</p>
+          <h2 class="venue-title">Templo</h2>
+          <p class="venue-subtitle">Medalla Milagrosa</p>
+          <a class="btn venue-btn" href="https://maps.app.goo.gl/zTpaMUJcBHm1dU4L6" target="_blank" rel="noopener">Ir a ubicación</a>
+        </div>
+        <div class="venue-photo">
+          <img src="assets/Templo.jpg" alt="Templo">
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIONES: RECEPCIÓN -->
+    <section id="recepcion" class="block venue-section venue-section--reverse">
+      <div class="venue-card reveal">
+        <div class="venue-photo">
+          <img src="assets/Recepcion.jpg" alt="Recepción">
+        </div>
+        <div class="venue-text">
+          <p class="venue-label">Celebración</p>
+          <h2 class="venue-title">Recepción</h2>
+          <p class="venue-subtitle">Hacienda del Cipres</p>
+          <a class="btn venue-btn" href="https://maps.app.goo.gl/veFSPX1JHBcf9jZ78" target="_blank" rel="noopener">Ir a ubicación</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOSPEDAJE -->
+    <section id="hospedaje" class="block venue-section hospedaje-section">
+      <div class="venue-card reveal">
+        <div class="hospedaje-photo">
+          <img class="active" src="assets/hotel-fch-expo.jpg" alt="FCH Hotel Expo">
+          <img src="assets/hotel-puerta-del-sol.jpg" alt="Hotel Puerta del Sol" loading="lazy">
+          <img src="assets/hotel-ibis-expo.jpg" alt="ibis Guadalajara Expo" loading="lazy">
+          <img src="assets/hotel-villa-del-sol.jpg" alt="Hotel Villa del Sol • Expo Guadalajara" loading="lazy">
+        </div>
+
+        <div class="venue-text">
+          <p class="venue-label">Sugerencia de</p>
+          <h2 class="venue-title">Hospedaje</h2>
+          <p class="hospedaje-intro">
+            Queremos que disfruten al máximo este día con nosotros. Les compartimos algunas
+            sugerencias de alojamiento con excelente calificación, en zonas muy convenientes
+            para el evento.
+          </p>
+
+          <div class="hotel-carousel" id="hotel-carousel">
+            <button class="hotel-nav" data-dir="-1" aria-label="Hotel anterior">&#10094;</button>
+            <div class="hotel-slides">
+              <div class="hotel-slide active">
+                <p class="hotel-name">FCH Hotel Expo</p>
+                <p class="hotel-price">Aprox. $780 MXN / noche</p>
+                <a class="venue-btn" href="https://maps.google.com/?cid=6981093060735184138" target="_blank" rel="noopener">Ir a Google Maps</a>
+              </div>
+              <div class="hotel-slide">
+                <p class="hotel-name">Hotel Puerta del Sol</p>
+                <p class="hotel-price">Aprox. $915 MXN / noche</p>
+                <a class="venue-btn" href="https://maps.google.com/?cid=9836041117532908072" target="_blank" rel="noopener">Ir a Google Maps</a>
+              </div>
+              <div class="hotel-slide">
+                <p class="hotel-name">ibis Guadalajara Expo</p>
+                <p class="hotel-price">Aprox. $919 MXN / noche</p>
+                <a class="venue-btn" href="https://maps.google.com/?cid=997300863562630104" target="_blank" rel="noopener">Ir a Google Maps</a>
+              </div>
+              <div class="hotel-slide">
+                <p class="hotel-name">Hotel Villa del Sol</p>
+                <p class="hotel-price">Aprox. $926 MXN / noche</p>
+                <a class="venue-btn" href="https://maps.google.com/?cid=14728680462298291739" target="_blank" rel="noopener">Ir a Google Maps</a>
+              </div>
+            </div>
+            <button class="hotel-nav" data-dir="1" aria-label="Hotel siguiente">&#10095;</button>
+          </div>
+
+          <div class="hotel-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AIRBNB + DESPEDIDA -->
+    <section class="block hospedaje-extra">
+      <div class="airbnb-banner reveal">
+        <p class="airbnb-eyebrow">¿Viajan en grupo?</p>
+        <p class="airbnb-text">
+          Si viajan en grupo, prefieren rentar una casa o departamento, o se quedarán por más días,
+          les recomendamos buscar opciones en Airbnb. Las mejores zonas y más cercanas son los
+          alrededores de Plaza del Sol o cerca del cruce de Av. Cruz del Sur y Calle Topacio.
+        </p>
+        <a class="btn venue-btn" href="https://www.airbnb.mx/s/Plaza-del-Sol--Guadalajara/homes" target="_blank" rel="noopener">Buscar opciones de Airbnb</a>
+      </div>
+
+      <p class="hospedaje-outro reveal">¡Nos emociona muchísimo compartir este momento con ustedes!</p>
+      <p class="hospedaje-firma reveal">— Ailec &amp; Omar</p>
+    </section>
+
+    <!-- CLIMA -->
+    <section id="clima" class="block clima-section">
+      <svg class="svg-symbols" aria-hidden="true" focusable="false">
+        <symbol id="icon-sol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <circle cx="32" cy="32" r="11"/>
+          <path d="M32 6 V14 M32 50 V58 M6 32 H14 M50 32 H58"/>
+          <path d="M13.6 13.6 L19.3 19.3 M44.7 44.7 L50.4 50.4 M13.6 50.4 L19.3 44.7 M44.7 19.3 L50.4 13.6"/>
+        </symbol>
+      </svg>
+
+      <div class="clima-card reveal">
+        <p class="clima-eyebrow">Clima de la semana</p>
+        <p class="clima-sub">Media histórica · Guadalajara, diciembre</p>
+
+        <div class="clima-dias">
+          <div class="clima-dia">
+            <p class="clima-nombre">martes</p>
+            <p class="clima-fecha">15 dic</p>
+            <svg class="clima-icono"><use href="#icon-sol"/></svg>
+            <p class="clima-temp"><span class="max">24°</span><span class="sep">/</span><span class="min">10°</span></p>
+          </div>
+          <div class="clima-dia">
+            <p class="clima-nombre">miércoles</p>
+            <p class="clima-fecha">16 dic</p>
+            <svg class="clima-icono"><use href="#icon-sol"/></svg>
+            <p class="clima-temp"><span class="max">24°</span><span class="sep">/</span><span class="min">10°</span></p>
+          </div>
+          <div class="clima-dia">
+            <p class="clima-nombre">jueves</p>
+            <p class="clima-fecha">17 dic</p>
+            <svg class="clima-icono"><use href="#icon-sol"/></svg>
+            <p class="clima-temp"><span class="max">24°</span><span class="sep">/</span><span class="min">10°</span></p>
+          </div>
+          <div class="clima-dia clima-dia--boda">
+            <p class="clima-nombre">viernes</p>
+            <p class="clima-fecha">18 dic</p>
+            <svg class="clima-icono"><use href="#icon-sol"/></svg>
+            <p class="clima-temp"><span class="max">24°</span><span class="sep">/</span><span class="min">10°</span></p>
+            <p class="clima-badge">Nuestro día</p>
+          </div>
+          <div class="clima-dia">
+            <p class="clima-nombre">sábado</p>
+            <p class="clima-fecha">19 dic</p>
+            <svg class="clima-icono"><use href="#icon-sol"/></svg>
+            <p class="clima-temp"><span class="max">24°</span><span class="sep">/</span><span class="min">10°</span></p>
+          </div>
+        </div>
+
+        <div class="clima-historial">
+          <p class="clima-historial-titulo">Historial de temperaturas · 18 de diciembre</p>
+          <table class="clima-tabla">
+            <thead>
+              <tr><th></th><th>Alta</th><th>Baja</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Media histórica</td><td>24°</td><td>10°</td></tr>
+              <tr><td>Semana previa</td><td>25°</td><td>10°</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="clima-nota">
+          Temperaturas basadas en el promedio histórico de la zona. El pronóstico real
+          estará disponible unos días antes del evento.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALERÍA DE FOTOS -->
+    <section id="galeria" class="block historia-section">
+      <h2 class="reveal">Galería de Fotos</h2>
+
+      <div class="historia-carousel" id="historia-carousel">
+        <div class="historia-slide">
+          <div class="historia-foto"><img src="assets/historia-1.jpg" alt="Ailec y Omar"></div>
+        </div>
+        <div class="historia-slide">
+          <div class="historia-foto"><img src="assets/historia-2.jpg" alt="Ailec y Omar" loading="lazy"></div>
+        </div>
+        <div class="historia-slide">
+          <div class="historia-foto"><img src="assets/historia-3.jpg" alt="Ailec y Omar" loading="lazy"></div>
+        </div>
+        <div class="historia-slide">
+          <div class="historia-foto"><img src="assets/historia-4.jpg" alt="Ailec y Omar" loading="lazy"></div>
+        </div>
+        <div class="historia-slide">
+          <div class="historia-foto"><img src="assets/historia-5.jpg" alt="Ailec y Omar" loading="lazy"></div>
+        </div>
+        <div class="historia-slide">
+          <div class="historia-foto"><img src="assets/historia-6.jpg" alt="Ailec y Omar" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="historia-controles">
+        <button class="historia-nav" data-dir="-1" aria-label="Momento anterior">&#10094;</button>
+        <div class="historia-dots"></div>
+        <button class="historia-nav" data-dir="1" aria-label="Momento siguiente">&#10095;</button>
+      </div>
+
+      <p class="historia-cierre reveal">Una historia que sigue escribiéndose, y queremos que formes parte de ella.</p>
+    </section>
+
+    <!-- MESA DE REGALOS -->
+    <section id="regalos" class="block regalos">
+      <div class="regalos-card reveal">
+        <h2 class="regalos-titulo">Mesa de Regalos</h2>
+        <p class="regalos-texto">
+          Tu presencia es el mejor regalo; si deseas hacernos un detalle,
+          estaremos muy agradecidos.
+        </p>
+
+        <div class="regalos-marca">
+          <img src="assets/liverpool.png" alt="Liverpool">
+        </div>
+
+        <p class="regalos-evento">Número de evento <strong>51990050</strong></p>
+
+        <a class="btn venue-btn" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51990050" target="_blank" rel="noopener">Ir a la mesa de regalos</a>
+      </div>
+    </section>
+
+    <!-- CÓDIGO DE VESTIMENTA -->
+    <section id="vestimenta" class="block vestimenta">
+      <div class="vestimenta-card reveal">
+        <header class="vestimenta-header">
+          <p class="vestimenta-script">Código de</p>
+          <h2 class="vestimenta-titulo">Vestimenta</h2>
+        </header>
+
+        <div class="vestimenta-grid">
+          <div class="vestimenta-col">
+            <p class="vestimenta-script vestimenta-script--sm">Formal</p>
+            <div class="vestimenta-iconos">
+              <svg viewBox="0 0 100 140" aria-label="Traje de gala">
+                <path d="M50 12 L32 3 L32 25 L50 17 L68 25 L68 3 Z"/>
+                <circle cx="50" cy="14" r="4.4"/>
+                <path d="M48 24 C41 33 31 39 22 43 L14 133 L41 133 L45 72 Z"/>
+                <path d="M52 24 C59 33 69 39 78 43 L86 133 L59 133 L55 72 Z"/>
+                <circle cx="50" cy="60" r="2.6"/>
+                <circle cx="50" cy="78" r="2.6"/>
+                <circle cx="50" cy="96" r="2.6"/>
+              </svg>
+              <svg viewBox="0 0 100 140" aria-label="Vestido largo">
+                <path d="M50 14 C58 14 66 17 66 23 L62 58 C74 74 72 96 64 110 C60 118 62 126 71 134 L29 134 C38 126 40 118 36 110 C28 96 26 74 38 58 L34 23 C34 17 42 14 50 14 Z"/>
+              </svg>
+            </div>
+            <div class="vestimenta-lineas">
+              <p>Hombres: Traje completo</p>
+              <p>Mujeres: Vestido largo</p>
+            </div>
+          </div>
+
+          <div class="vestimenta-col">
+            <p class="vestimenta-script vestimenta-script--sm">Paleta de colores</p>
+            <div class="paleta">
+              <span style="background:#5C0A18" title="Cereza profundo"></span>
+              <span style="background:#8E1B2E" title="Cereza"></span>
+              <span style="background:#B22239" title="Cereza claro"></span>
+              <span style="background:#C97481" title="Rosa cereza"></span>
+              <span style="background:#EBCFCD" title="Rosa pálido"></span>
+            </div>
+            <p class="vestimenta-nota">Tonos cereza y sus derivados</p>
+          </div>
+
+          <div class="vestimenta-col">
+            <p class="vestimenta-script vestimenta-script--sm">Inspiración</p>
+            <a class="btn venue-btn" href="https://www.pinterest.com/search/pins/?q=cherry%20red%20wedding%20guest%20dress" target="_blank" rel="noopener">Ir a Pinterest</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A TOMAR EN CUENTA -->
+    <section id="notas" class="block notas">
+      <div class="notas-card reveal">
+        <h2 class="notas-titulo">¡A Tomar en Cuenta!</h2>
+        <ol class="notas-lista">
+          <li>Llegar al menos 20 minutos antes del inicio del evento.</li>
+          <li>Seguir el código de vestimenta especificado en la invitación.</li>
+          <li>Evitar el color blanco, reservado para la novia.</li>
+          <li>Confirmar su asistencia con anticipación, para la correcta organización del evento.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- RSVP / CONTACTO -->
+    <section id="contacto" class="rsvp-section">
+      <div class="split-card reveal">
+        <div class="split-foto">
+          <img src="assets/confirmacion.jpg" alt="" loading="lazy">
+        </div>
+        <div class="rsvp-card">
+        <p class="tarjeta-script">Confirma tu</p>
+        <h2 class="tarjeta-titulo">Asistencia</h2>
+        <p class="rsvp-intro">
+          Tu respuesta nos ayuda a preparar cada detalle. Te agradecemos
+          confirmar antes del <strong>1 de diciembre</strong>.
+        </p>
+
+        <div class="rsvp-invitado" id="rsvp-invitado" hidden>
+          <p class="rsvp-invitado-etiqueta">Reservamos para</p>
+          <p class="rsvp-invitado-nombre" id="rsvp-invitado-nombre"></p>
+          <p class="rsvp-boletos"><span id="rsvp-boletos-num"></span> <span id="rsvp-boletos-texto"></span></p>
+        </div>
+
+        <p class="rsvp-aviso" id="rsvp-aviso" hidden></p>
+
+        <form id="rsvp-form" hidden>
+          <label class="campo">
+            <span>¿Podrás acompañarnos?</span>
+            <select id="rsvp-asistencia" required>
+              <option value="">Selecciona una opción</option>
+              <option value="si">Sí, asistiré</option>
+              <option value="no">No podré asistir</option>
+            </select>
+          </label>
+
+          <label class="campo" id="campo-asistentes" hidden>
+            <span>¿Cuántos asistirán?</span>
+            <select id="rsvp-asistentes"></select>
+          </label>
+
+          <input type="text" name="website" class="campo-trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" class="btn venue-btn">Confirmar asistencia</button>
+        </form>
+        <p class="form-estado" id="rsvp-estado" role="status" aria-live="polite"></p>
+
+        <div class="rsvp-contacto">
+          <p class="rsvp-contacto-titulo">¿Tienes alguna duda? Escríbenos</p>
+          <div class="rsvp-tabs">
+            <button class="tab active" data-tab="novia">Ailec</button>
+            <button class="tab" data-tab="novio">Omar</button>
+          </div>
+          <div class="tab-content" id="tab-novia">
+            <p>Ailec · Tel: Por confirmar</p>
+          </div>
+          <div class="tab-content hidden" id="tab-novio">
+            <p>Omar · Tel: Por confirmar</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CANCIONES -->
+    <section id="canciones" class="canciones-section">
+      <div class="split-card split-card--invertida reveal">
+        <div class="split-foto">
+          <img src="assets/canciones.jpg" alt="" loading="lazy">
+        </div>
+        <div class="canciones-card">
+          <p class="tarjeta-script tarjeta-script--sm">Sugerencia de</p>
+          <h2 class="tarjeta-titulo tarjeta-titulo--sm">Canciones</h2>
+          <p class="canciones-intro">¿Qué canción no puede faltar en la fiesta?</p>
+
+          <form id="song-form">
+            <input type="text" id="song-input" placeholder="Artista - Canción" required maxlength="120" autocomplete="off">
+            <input type="text" name="website" class="campo-trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button type="submit" class="btn venue-btn">Enviar sugerencia</button>
+          </form>
+          <p class="form-estado" id="song-estado" role="status" aria-live="polite"></p>
+          <ul id="song-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CIERRE / INVITACIÓN FINAL -->
+    <section class="cierre">
+      <div class="cierre-overlay"></div>
+      <div class="cierre-copy reveal">
+        <p class="cierre-alto">Nos gustaría que nos</p>
+        <p class="cierre-script">acompañes en este día</p>
+        <p class="cierre-alto">tan especial</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Ailec &amp; Omar · 18 de diciembre de 2026</p>
+    </footer>
+
+  </div>
+
+  <div id="calendar-modal" class="calendar-modal">
+    <div class="calendar-modal-content">
+      <button id="close-calendar-modal" class="calendar-close" aria-label="Cerrar">×</button>
+      <h3>Agregar al calendario</h3>
+      <p>Guarda la fecha de la boda en tu calendario favorito.</p>
+      <div class="calendar-options">
+        <a id="gmail-link" class="calendar-option" target="_blank" rel="noopener">Gmail</a>
+        <a id="outlook-link" class="calendar-option" target="_blank" rel="noopener">Outlook</a>
+        <a id="yahoo-link" class="calendar-option" target="_blank" rel="noopener">Yahoo</a>
+        <a id="apple-link" class="calendar-option" target="_blank" rel="noopener">Apple</a>
+      </div>
+      <button id="calendar-close-btn" class="btn calendar-close-btn">Cerrar</button>
+    </div>
+  </div>
+
+  <audio id="wedding-audio" src="assets/wedding-audio.mp3" preload="metadata" loop playsinline></audio>
+  <script src="rsvp-api.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
