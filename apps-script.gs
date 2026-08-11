@@ -15,6 +15,10 @@
 // Formato: 'YYYY-MM-DDTHH:mm:ss' en la zona horaria del proyecto de Apps Script.
 const FECHA_CORTE = '2026-11-20T23:59:59';
 
+// Dirección donde está publicada la invitación, sin barra final.
+// Se usa solo para armar los enlaces de WhatsApp (generarEnlacesWhatsapp).
+const URL_INVITACION = 'https://ejemplo.pages.dev';
+
 const HOJA_INVITADOS = 'Invitados';
 const HOJA_RESUMEN = 'Resumen';
 const HOJA_LOG = 'Log';
@@ -32,12 +36,14 @@ const COL = {
   TELEFONO: 8,
   MENSAJE: 9,
   FECHA_RESPUESTA: 10,
+  ENLACE_WHATSAPP: 11,
 };
 
 const ENCABEZADOS = {
   [HOJA_INVITADOS]: [
     'token', 'nombre_display', 'tipo', 'pases_max', 'pases_confirmados',
     'estatus', 'acompanantes', 'telefono', 'mensaje', 'fecha_respuesta',
+    'enlace_whatsapp',
   ],
   [HOJA_LOG]: ['timestamp', 'token', 'accion', 'resultado'],
   [HOJA_CANCIONES]: ['Fecha', 'Canción sugerida', 'Sugerida por'],
@@ -339,4 +345,50 @@ function tokenAleatorio() {
     token += alfabeto.charAt(Math.floor(Math.random() * alfabeto.length));
   }
   return token;
+}
+
+/* ==================================================================
+   UTILIDAD MANUAL — FASE 5
+   Ejecútala después de generarTokens() para armar, por cada invitado,
+   un link de WhatsApp con su mensaje y su enlace personal ya escritos.
+   Si la columna "telefono" tiene un número, el link abre el chat
+   directo con ese invitado; si está vacía, abre el selector de
+   contactos de WhatsApp para que elijas a quién mandárselo.
+================================================================== */
+function generarEnlacesWhatsapp() {
+  if (!URL_INVITACION || URL_INVITACION === 'https://ejemplo.pages.dev') {
+    SpreadsheetApp.getActiveSpreadsheet().toast('Define URL_INVITACION con tu dominio real antes de generar los enlaces.');
+    return;
+  }
+
+  const h = hoja(HOJA_INVITADOS);
+  const filas = h.getDataRange().getValues();
+
+  if (!filas[0][COL.ENLACE_WHATSAPP - 1]) {
+    h.getRange(1, COL.ENLACE_WHATSAPP).setValue('enlace_whatsapp').setFontWeight('bold');
+  }
+
+  let generados = 0;
+  for (let i = 1; i < filas.length; i++) {
+    const token = normalizarToken(filas[i][COL.TOKEN - 1]);
+    if (!token) continue; // corre generarTokens() primero si falta
+
+    const nombre = String(filas[i][COL.NOMBRE - 1] || '').trim();
+    const pasesMax = parseInt(filas[i][COL.PASES_MAX - 1], 10) || 1;
+    const telefono = String(filas[i][COL.TELEFONO - 1] || '').replace(/[^0-9]/g, '');
+
+    const enlace = URL_INVITACION + '?i=' + token;
+    const mensaje =
+      '¡Hola! Es un gusto invitarte a la boda de Ailec & Omar 💍\n\n' +
+      'Reservamos ' + pasesMax + (pasesMax === 1 ? ' pase' : ' pases') + ' para ' + nombre + '. ' +
+      'Confirma tu asistencia aquí:\n' + enlace + '\n\n¡Los esperamos!';
+
+    const base = telefono ? 'https://wa.me/' + telefono : 'https://wa.me/';
+    const urlWhatsapp = base + '?text=' + encodeURIComponent(mensaje);
+
+    h.getRange(i + 1, COL.ENLACE_WHATSAPP).setValue(urlWhatsapp);
+    generados++;
+  }
+
+  SpreadsheetApp.getActiveSpreadsheet().toast(generados + ' enlace(s) de WhatsApp generado(s).');
 }
