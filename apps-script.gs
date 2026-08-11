@@ -13,7 +13,7 @@
 
 // Fecha límite para poder confirmar/editar el RSVP ('' = sin límite).
 // Formato: 'YYYY-MM-DDTHH:mm:ss' en la zona horaria del proyecto de Apps Script.
-const FECHA_CORTE = '';
+const FECHA_CORTE = '2026-11-20T23:59:59';
 
 const HOJA_INVITADOS = 'Invitados';
 const HOJA_RESUMEN = 'Resumen';
