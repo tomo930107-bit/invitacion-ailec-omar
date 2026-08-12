@@ -379,9 +379,12 @@ function generarEnlacesWhatsapp() {
 
     const enlace = URL_INVITACION + '?i=' + token;
     const mensaje =
-      '¡Hola! Es un gusto invitarte a la boda de Ailec & Omar 💍\n\n' +
-      'Reservamos ' + pasesMax + (pasesMax === 1 ? ' pase' : ' pases') + ' para ' + nombre + '. ' +
-      'Confirma tu asistencia aquí:\n' + enlace + '\n\n¡Los esperamos!';
+      '¡Hola! 💍\n\n' +
+      'Con mucho cariño queremos invitarte a celebrar nuestra boda. Será el domingo 18 de diciembre de 2026 a las 4:30 pm — nos encantaría tenerte ahí.\n\n' +
+      'Reservamos ' + pasesMax + (pasesMax === 1 ? ' pase' : ' pases') + ' para ' + nombre + '.\n\n' +
+      'Aquí puedes ver todos los detalles y confirmar tu asistencia:\n' + enlace + '\n\n' +
+      '¡Te esperamos!\n' +
+      'Ailec & Omar';
 
     const base = telefono ? 'https://wa.me/' + telefono : 'https://wa.me/';
     const urlWhatsapp = base + '?text=' + encodeURIComponent(mensaje);
