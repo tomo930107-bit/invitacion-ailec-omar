@@ -661,6 +661,14 @@ body::before {
   color: #fdf8ee;
 }
 
+/* .btn trae "display:inline-block; margin:8px" que, al combinarse con
+   venue-btn, le ganaba por orden de cascada y descentraba el botón.
+   Con dos clases en el selector, esta regla gana por especificidad. */
+.btn.venue-btn {
+  display: block;
+  margin: 0 auto;
+}
+
 .venue-photo img {
   width: 100%;
   aspect-ratio: 4 / 5;
