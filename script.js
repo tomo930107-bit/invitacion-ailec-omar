@@ -309,7 +309,7 @@ async function cargarInvitado() {
     document.getElementById('rsvp-invitado-nombre').textContent = datos.nombre_display;
     document.getElementById('rsvp-boletos-num').textContent = datos.pases_max;
     document.getElementById('rsvp-boletos-texto').textContent =
-      datos.pases_max === 1 ? 'lugar reservado' : 'lugares reservados';
+      datos.pases_max === 1 ? 'lugar' : 'lugares';
 
     // El selector se arma con los pases asignados: no hay forma de elegir más.
     const selector = document.getElementById('rsvp-asistentes');
