@@ -1700,6 +1700,13 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 .tab.active { background: #a56d3b; border-color: #a56d3b; color: #fdf8ee; }
 .tab-content p { margin: 0; color: #5f4a3c; }
 .tab-content.hidden { display: none; }
+.tab-content a {
+  color: #a56d3b;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(165, 109, 59, 0.4);
+}
+.tab-content a:hover,
+.tab-content a:focus-visible { color: #8E1B2E; border-color: currentColor; }
 
 /* --- Sugerencia de canciones (secundaria) --- */
 .canciones-section { width: 100%; padding: clamp(48px, 7vw, 80px) 20px; }
