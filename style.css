@@ -5,7 +5,7 @@ body {
   color: #4d3b2d;
   overflow: hidden;
   overflow-x: hidden;
-  background: linear-gradient(360deg, #f3eadc 0%, #710a0a 30%);
+  background: linear-gradient(360deg, #f3eadc 0%, #e3cece 30%);
 }
 
 /* Subtle chevron / paper texture overlay */
@@ -270,7 +270,7 @@ body::before {
 
 .phrase-block {
   padding: 70px 20px;
-  background: #e8d7c7;
+  background: #f3e4e4;
 }
 
 .phrase-card {
@@ -451,7 +451,7 @@ body::before {
 #audio-btn { bottom: 18px; }
 
 #home-btn:hover, #audio-btn:hover {
-  background: #a56d3b;
+  background: #710A0A;
   transform: scale(1.06);
 }
 
@@ -467,7 +467,7 @@ body::before {
 
 /* Música sonando: el botón se marca en dorado */
 #audio-btn.sonando {
-  background: #a56d3b;
+  background: #710A0A;
   border-color: #fdf8ee;
 }
 
@@ -477,7 +477,7 @@ body::before {
 }
 @keyframes latido-audio {
   0%, 100% { box-shadow: 0 6px 18px rgba(40, 26, 16, 0.28); }
-  50%      { box-shadow: 0 6px 26px rgba(165, 109, 59, 0.85); }
+  50%      { box-shadow: 0 6px 26px rgba(113, 10, 10, 0.85); }
 }
 @media (prefers-reduced-motion: reduce) {
   #audio-btn.pendiente { animation: none; }
@@ -491,7 +491,7 @@ body::before {
   margin: 0;
   padding: 0;
   display: block;
-  background: linear-gradient(135deg, #c9a878, #b98f5e);
+  background: linear-gradient(135deg, #e3cece, #d2b1b1);
 }
 
 .padres-grid {
@@ -505,7 +505,7 @@ body::before {
 .section-gap {
   width: 100%;
   height: clamp(48px, 7vw, 96px);
-  background: linear-gradient(135deg, #c9a878, #b98f5e);
+  background: linear-gradient(135deg, #e3cece, #d2b1b1);
 }
 
 .padres-card {
@@ -546,7 +546,7 @@ body::before {
   display: inline-block;
   margin-left: 8px;
   font-size: 1rem;
-  color: #a56d3b;
+  color: #710A0A;
 }
 
 .padres-photo {
@@ -578,27 +578,27 @@ body::before {
 
 .couple-vector .pv-line {
   fill: none;
-  stroke: #a56d3b;
+  stroke: #710A0A;
   stroke-width: 1.6;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 .couple-vector .pv-fill {
   fill: #fdf8ee;
-  stroke: #a56d3b;
+  stroke: #710A0A;
   stroke-width: 1.6;
   stroke-linejoin: round;
 }
 .couple-vector .pv-dot {
-  fill: #a56d3b;
+  fill: #710A0A;
   stroke: none;
 }
 .couple-vector .pv-ground {
-  stroke: rgba(165, 109, 59, 0.35);
+  stroke: rgba(113, 10, 10, 0.35);
 }
 .couple-vector .pv-heart {
-  fill: rgba(165, 109, 59, 0.22);
-  stroke: #a56d3b;
+  fill: rgba(113, 10, 10, 0.22);
+  stroke: #710A0A;
   stroke-width: 1.4;
   stroke-linejoin: round;
 }
@@ -611,7 +611,7 @@ body::before {
   padding: 60px 20px;
   display: flex;
   justify-content: center;
-  background: linear-gradient(135deg, #c9a878, #b98f5e);
+  background: linear-gradient(135deg, #e3cece, #d2b1b1);
 }
 
 .venue-card {
@@ -631,7 +631,7 @@ body::before {
 .venue-label {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
-  color: #a56d3b;
+  color: #710A0A;
   margin: 0 0 4px;
 }
 
@@ -661,7 +661,7 @@ body::before {
   margin: 0 auto;
   padding: 16px 24px;
   box-sizing: border-box;
-  border: 1px solid rgba(165, 109, 59, 0.45);
+  border: 1px solid rgba(113, 10, 10, 0.45);
   border-radius: 12px;
   background: #fbf4e6;
   color: #5f4a3c;
@@ -673,8 +673,8 @@ body::before {
 }
 .venue-btn:hover,
 .venue-btn:focus-visible {
-  background: #a56d3b;
-  border-color: #a56d3b;
+  background: #710A0A;
+  border-color: #710A0A;
   color: #fdf8ee;
 }
 
@@ -707,7 +707,7 @@ body::before {
   aspect-ratio: 4 / 5;
   border-radius: 4px;
   overflow: hidden;
-  background: linear-gradient(135deg, #e8d7c7, #c9a878);
+  background: linear-gradient(135deg, #f3e4e4, #e3cece);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
 }
 .hospedaje-photo img {
@@ -741,7 +741,7 @@ body::before {
   padding: 6px 10px;
   background: none;
   border: none;
-  color: #a56d3b;
+  color: #710A0A;
   font-size: 1.4rem;
   line-height: 1;
   cursor: pointer;
@@ -782,7 +782,7 @@ body::before {
 .hotel-price {
   margin: 0 0 20px;
   font-size: 1.02rem;
-  color: #a56d3b;
+  color: #710A0A;
   letter-spacing: 0.03em;
 }
 
@@ -796,11 +796,11 @@ body::before {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(165, 109, 59, 0.3);
+  background: rgba(113, 10, 10, 0.3);
   cursor: pointer;
   transition: background .3s ease;
 }
-.hotel-dots span.active { background: #a56d3b; }
+.hotel-dots span.active { background: #710A0A; }
 
 /* Banner Airbnb */
 .airbnb-banner {
@@ -809,7 +809,7 @@ body::before {
   margin: 0 auto;
   padding: clamp(30px, 4vw, 46px);
   background: #fdf8ee;
-  border: 1px solid rgba(165, 109, 59, 0.3);
+  border: 1px solid rgba(113, 10, 10, 0.3);
   border-radius: 22px;
   box-shadow: 0 16px 40px rgba(60, 40, 20, 0.14);
   text-align: center;
@@ -819,7 +819,7 @@ body::before {
   margin: 0 0 12px;
   font-family: 'Great Vibes', cursive;
   font-size: clamp(1.7rem, 3vw, 2.2rem);
-  color: #a56d3b;
+  color: #710A0A;
 }
 
 .airbnb-text {
@@ -840,7 +840,7 @@ body::before {
   margin: 10px 0 0;
   font-family: 'Great Vibes', cursive;
   font-size: clamp(1.9rem, 3.4vw, 2.6rem);
-  color: #a56d3b;
+  color: #710A0A;
 }
 
 /* --- Carrusel --- */
@@ -881,7 +881,7 @@ body::before {
   padding: 54px 34px 50px;
   background: rgba(243, 234, 220, 0.85);
   border-radius: 20px;
-  border: 1px solid rgba(165, 109, 59, 0.35);
+  border: 1px solid rgba(113, 10, 10, 0.35);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
 }
 
@@ -912,7 +912,7 @@ body::before {
 .timeline-connector {
   width: 0;
   height: 42px;
-  border-left: 1.5px dashed #a56d3b;
+  border-left: 1.5px dashed #710A0A;
   opacity: .85;
 }
 
@@ -923,7 +923,7 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #a56d3b;
+  color: #710A0A;
   transform: scale(.92);
   transition: transform .45s cubic-bezier(.2,.8,.2,1);
 }
@@ -1023,7 +1023,7 @@ body::before {
   justify-content: center;
   align-items: center;
   border-radius: 14px;
-  background: #d9c2ab;
+  background: #e3cece;
   color: #3a2620;
   text-decoration: none;
   font-weight: 600;
@@ -1060,7 +1060,7 @@ body::before {
   padding: 60px 20px;
   display: flex;
   justify-content: center;
-  background: linear-gradient(135deg, #c9a878, #b98f5e);
+  background: linear-gradient(135deg, #e3cece, #d2b1b1);
 }
 
 .clima-card {
@@ -1077,7 +1077,7 @@ body::before {
   margin: 0 0 6px;
   font-family: 'Great Vibes', cursive;
   font-size: clamp(2.2rem, 4vw, 3.1rem);
-  color: #a56d3b;
+  color: #710A0A;
   line-height: 1.2;
 }
 
@@ -1102,7 +1102,7 @@ body::before {
   border-radius: 14px;
 }
 .clima-dia--boda {
-  border-color: rgba(165, 109, 59, 0.4);
+  border-color: rgba(113, 10, 10, 0.4);
   background: #fbf4e6;
 }
 
@@ -1125,7 +1125,7 @@ body::before {
   width: 42px;
   height: 42px;
   margin: 14px 0 10px;
-  color: #a56d3b;
+  color: #710A0A;
 }
 
 .clima-temp {
@@ -1136,7 +1136,7 @@ body::before {
   gap: 6px;
 }
 .clima-temp .max { font-size: 1.45rem; color: #4d3b2d; }
-.clima-temp .sep { color: rgba(165, 109, 59, 0.45); }
+.clima-temp .sep { color: rgba(113, 10, 10, 0.45); }
 .clima-temp .min { font-size: 1.1rem; color: #a08a72; }
 
 .clima-badge {
@@ -1144,14 +1144,14 @@ body::before {
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #a56d3b;
+  color: #710A0A;
 }
 
 .clima-historial {
   max-width: 460px;
   margin: clamp(30px, 4vw, 46px) auto 0;
   padding-top: clamp(24px, 3vw, 34px);
-  border-top: 1px solid rgba(165, 109, 59, 0.22);
+  border-top: 1px solid rgba(113, 10, 10, 0.22);
 }
 
 .clima-historial-titulo {
@@ -1180,7 +1180,7 @@ body::before {
 .clima-tabla td { padding: 11px 0; text-align: right; }
 .clima-tabla td:first-child,
 .clima-tabla th:first-child { text-align: left; }
-.clima-tabla tbody tr + tr td { border-top: 1px solid rgba(165, 109, 59, 0.15); }
+.clima-tabla tbody tr + tr td { border-top: 1px solid rgba(113, 10, 10, 0.15); }
 
 .clima-nota {
   max-width: 620px;
@@ -1219,7 +1219,7 @@ body::before {
   min-height: 0;
   border-radius: 6px;
   overflow: hidden;
-  background: rgba(165, 109, 59, 0.12);
+  background: rgba(113, 10, 10, 0.12);
   box-shadow: 0 18px 40px rgba(60, 40, 20, 0.3);
 }
 .historia-foto img {
@@ -1244,7 +1244,7 @@ body::before {
   padding: 6px 12px;
   background: none;
   border: none;
-  color: #a56d3b;
+  color: #710A0A;
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
@@ -1257,11 +1257,11 @@ body::before {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(165, 109, 59, 0.3);
+  background: rgba(113, 10, 10, 0.3);
   cursor: pointer;
   transition: background .3s ease;
 }
-.historia-dots span.active { background: #a56d3b; }
+.historia-dots span.active { background: #710A0A; }
 
 .historia-cierre {
   max-width: 640px;
@@ -1288,7 +1288,7 @@ body::before {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(2.2rem, 4vw, 3rem);
   font-weight: 400;
-  color: #d9b88a;
+  color: #e3cece;
   line-height: 1.2;
 }
 
@@ -1325,13 +1325,13 @@ body::before {
 
 .regalos-card .venue-btn {
   background: transparent;
-  border-color: rgba(217, 184, 138, 0.55);
+  border-color: rgba(227, 206, 206, 0.55);
   color: #f0e4d2;
 }
 .regalos-card .venue-btn:hover,
 .regalos-card .venue-btn:focus-visible {
-  background: #d9b88a;
-  border-color: #d9b88a;
+  background: #e3cece;
+  border-color: #e3cece;
   color: #2a201a;
 }
 
@@ -1449,7 +1449,7 @@ body::before {
   margin: 0 auto;
   padding: clamp(40px, 6vw, 72px) clamp(26px, 4vw, 60px);
   background: #fdf8ee;
-  border: 1px solid rgba(165, 109, 59, 0.16);
+  border: 1px solid rgba(113, 10, 10, 0.16);
   border-radius: 6px;
   box-shadow: 0 20px 50px rgba(60, 40, 20, 0.16);
   text-align: center;
@@ -1460,7 +1460,7 @@ body::before {
   font-family: 'Great Vibes', cursive;
   font-weight: 400;
   font-size: clamp(2.3rem, 4.6vw, 3.4rem);
-  color: #a56d3b;
+  color: #710A0A;
   line-height: 1.15;
 }
 
@@ -1483,7 +1483,7 @@ body::before {
 }
 .notas-lista li::before {
   content: counter(nota) ".- ";
-  color: #a56d3b;
+  color: #710A0A;
 }
 
 /* --- Formularios: estado y campo trampa anti-spam --- */
@@ -1513,7 +1513,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
   font-family: 'Great Vibes', cursive;
   font-size: clamp(2.2rem, 4.4vw, 3.3rem);
   font-weight: 400;
-  color: #a56d3b;
+  color: #710A0A;
   line-height: 1.1;
 }
 .tarjeta-script--sm { font-size: clamp(1.8rem, 3.2vw, 2.5rem); }
@@ -1539,7 +1539,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
   align-items: stretch;
   background: #fdf8ee;
-  border: 1px solid rgba(165, 109, 59, 0.2);
+  border: 1px solid rgba(113, 10, 10, 0.2);
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 24px 60px rgba(60, 40, 20, 0.22);
@@ -1549,7 +1549,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 .split-foto {
   position: relative;
   min-height: 320px;
-  background: linear-gradient(135deg, #e8d7c7, #c9a878);
+  background: linear-gradient(135deg, #f3e4e4, #e3cece);
 }
 .split-foto img {
   position: absolute;
@@ -1570,7 +1570,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 .rsvp-section {
   width: 100%;
   padding: clamp(56px, 8vw, 96px) 20px;
-  background: linear-gradient(135deg, #c9a878, #b98f5e);
+  background: linear-gradient(135deg, #e3cece, #d2b1b1);
 }
 
 .rsvp-card {
@@ -1587,7 +1587,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
   margin-bottom: clamp(24px, 3.5vw, 34px);
   padding: 20px 18px;
   background: #fbf4e6;
-  border: 1px solid rgba(165, 109, 59, 0.28);
+  border: 1px solid rgba(113, 10, 10, 0.28);
   border-radius: 14px;
 }
 .rsvp-invitado-etiqueta {
@@ -1619,7 +1619,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
   margin: 0 0 8px;
   padding: 18px 20px;
   background: #fbf4e6;
-  border: 1px dashed rgba(165, 109, 59, 0.4);
+  border: 1px dashed rgba(113, 10, 10, 0.4);
   border-radius: 14px;
   font-size: 1rem;
   line-height: 1.7;
@@ -1664,7 +1664,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
   box-sizing: border-box;
   padding: 13px 15px;
   background: #fffdf8;
-  border: 1px solid rgba(165, 109, 59, 0.3);
+  border: 1px solid rgba(113, 10, 10, 0.3);
   border-radius: 10px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem;
@@ -1674,8 +1674,8 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 .campo input:focus,
 .campo select:focus {
   outline: none;
-  border-color: #a56d3b;
-  box-shadow: 0 0 0 3px rgba(165, 109, 59, 0.14);
+  border-color: #710A0A;
+  box-shadow: 0 0 0 3px rgba(113, 10, 10, 0.14);
 }
 .campo input::placeholder { color: #bfae9a; }
 
@@ -1685,7 +1685,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
   width: 100%;
   margin-top: clamp(30px, 4vw, 44px);
   padding-top: clamp(24px, 3vw, 34px);
-  border-top: 1px solid rgba(165, 109, 59, 0.2);
+  border-top: 1px solid rgba(113, 10, 10, 0.2);
 }
 
 .rsvp-contacto-titulo {
@@ -1704,23 +1704,23 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 }
 .tab {
   padding: 9px 24px;
-  border: 1px solid rgba(165, 109, 59, 0.4);
+  border: 1px solid rgba(113, 10, 10, 0.4);
   border-radius: 999px;
   background: transparent;
-  color: #a56d3b;
+  color: #710A0A;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1rem;
   letter-spacing: 0.08em;
   cursor: pointer;
   transition: background .3s ease, color .3s ease;
 }
-.tab.active { background: #a56d3b; border-color: #a56d3b; color: #fdf8ee; }
+.tab.active { background: #710A0A; border-color: #710A0A; color: #fdf8ee; }
 .tab-content p { margin: 0; color: #5f4a3c; }
 .tab-content.hidden { display: none; }
 .tab-content a {
-  color: #a56d3b;
+  color: #710A0A;
   text-decoration: none;
-  border-bottom: 1px solid rgba(165, 109, 59, 0.4);
+  border-bottom: 1px solid rgba(113, 10, 10, 0.4);
 }
 .tab-content a:hover,
 .tab-content a:focus-visible { color: #710A0A; border-color: currentColor; }
@@ -1758,7 +1758,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
   box-sizing: border-box;
   padding: 13px 15px;
   background: #fffdf8;
-  border: 1px solid rgba(165, 109, 59, 0.3);
+  border: 1px solid rgba(113, 10, 10, 0.3);
   border-radius: 10px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem;
@@ -1767,8 +1767,8 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 }
 #song-input:focus {
   outline: none;
-  border-color: #a56d3b;
-  box-shadow: 0 0 0 3px rgba(165, 109, 59, 0.14);
+  border-color: #710A0A;
+  box-shadow: 0 0 0 3px rgba(113, 10, 10, 0.14);
 }
 #song-input::placeholder { color: #bfae9a; }
 #song-form .venue-btn { flex: 0 0 auto; width: auto; max-width: none; }
@@ -1784,7 +1784,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 }
 #song-list li {
   padding: 8px 0;
-  border-top: 1px solid rgba(165, 109, 59, 0.15);
+  border-top: 1px solid rgba(113, 10, 10, 0.15);
 }
 
 /* ==================================================================
@@ -1888,7 +1888,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 footer {
   text-align: center;
   padding: 20px;
-  background: linear-gradient(135deg, #c9a878, #b98f5e);
+  background: linear-gradient(135deg, #e3cece, #d2b1b1);
   color: #4d3b2d;
   font-size: 0.95rem;
   letter-spacing: 0.08em;
