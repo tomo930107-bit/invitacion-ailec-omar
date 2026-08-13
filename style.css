@@ -1349,7 +1349,7 @@ body::before {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(2rem, 3.6vw, 2.9rem);
   font-weight: 400;
-  color: #8E1B2E;
+  color: #710A0A;
   line-height: 1.1;
 }
 .vestimenta-script--sm { font-size: clamp(1.7rem, 2.8vw, 2.3rem); }
@@ -1387,7 +1387,7 @@ body::before {
 .vestimenta-iconos svg {
   width: clamp(58px, 8vw, 78px);
   height: auto;
-  fill: #8E1B2E;
+  fill: #710A0A;
 }
 
 .vestimenta-lineas p {
@@ -1418,12 +1418,12 @@ body::before {
 .vestimenta-col .venue-btn {
   max-width: 260px;
   border-color: rgba(142, 27, 46, 0.4);
-  color: #8E1B2E;
+  color: #710A0A;
 }
 .vestimenta-col .venue-btn:hover,
 .vestimenta-col .venue-btn:focus-visible {
-  background: #8E1B2E;
-  border-color: #8E1B2E;
+  background: #710A0A;
+  border-color: #710A0A;
   color: #fdf8ee;
 }
 
@@ -1495,7 +1495,7 @@ body::before {
   color: #6b5d4a;
 }
 .form-estado--ok { color: #4d7c4d; }
-.form-estado--error { color: #8E1B2E; }
+.form-estado--error { color: #710A0A; }
 
 button[disabled] { opacity: 0.55; cursor: not-allowed; }
 
@@ -1599,7 +1599,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 .rsvp-boletos {
   margin: 0;
   font-size: 1.02rem;
-  color: #8E1B2E;
+  color: #710A0A;
   letter-spacing: 0.04em;
 }
 .rsvp-boletos span:first-child {
@@ -1625,7 +1625,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
   line-height: 1.8;
   color: #6b5d4a;
 }
-.rsvp-intro strong { color: #8E1B2E; font-weight: 600; }
+.rsvp-intro strong { color: #710A0A; font-weight: 600; }
 
 #rsvp-form {
   display: flex;
@@ -1715,7 +1715,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
   border-bottom: 1px solid rgba(165, 109, 59, 0.4);
 }
 .tab-content a:hover,
-.tab-content a:focus-visible { color: #8E1B2E; border-color: currentColor; }
+.tab-content a:focus-visible { color: #710A0A; border-color: currentColor; }
 
 /* --- Sugerencia de canciones (secundaria) --- */
 .canciones-section { width: 100%; padding: clamp(48px, 7vw, 80px) 20px; }
