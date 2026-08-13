@@ -476,7 +476,7 @@ body::before {
   margin: 0;
   padding: 0;
   display: block;
-  background: linear-gradient(135deg, #c9b7bb, #ab8e94);
+  background: linear-gradient(135deg, #c9b7bb, #660619);
 }
 
 .padres-grid {
@@ -490,7 +490,7 @@ body::before {
 .section-gap {
   width: 100%;
   height: clamp(48px, 7vw, 96px);
-  background: linear-gradient(135deg, #c9b7bb, #ab8e94);
+  background: linear-gradient(135deg, #c9b7bb, #660619);
 }
 
 .padres-card {
@@ -596,7 +596,7 @@ body::before {
   padding: 60px 20px;
   display: flex;
   justify-content: center;
-  background: linear-gradient(135deg, #c9b7bb, #ab8e94);
+  background: linear-gradient(135deg, #c9b7bb, #660619);
 }
 
 .venue-card {
@@ -1045,7 +1045,7 @@ body::before {
   padding: 60px 20px;
   display: flex;
   justify-content: center;
-  background: linear-gradient(135deg, #c9b7bb, #ab8e94);
+  background: linear-gradient(135deg, #c9b7bb, #660619);
 }
 
 .clima-card {
@@ -1555,7 +1555,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 .rsvp-section {
   width: 100%;
   padding: clamp(56px, 8vw, 96px) 20px;
-  background: linear-gradient(135deg, #c9b7bb, #ab8e94);
+  background: linear-gradient(135deg, #c9b7bb, #660619);
 }
 
 .rsvp-card {
@@ -1873,7 +1873,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 footer {
   text-align: center;
   padding: 20px;
-  background: linear-gradient(135deg, #c9b7bb, #ab8e94);
+  background: linear-gradient(135deg, #c9b7bb, #660619);
   color: #4d3b2d;
   font-size: 0.95rem;
   letter-spacing: 0.08em;
