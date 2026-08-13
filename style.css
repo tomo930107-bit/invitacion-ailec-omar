@@ -5,7 +5,7 @@ body {
   color: #4d3b2d;
   overflow: hidden;
   overflow-x: hidden;
-  background: linear-gradient(360deg, #f3eadc 0%, #f2b1b1 30%);
+  background: linear-gradient(360deg, #f3eadc 0%, #710a0a 30%);
 }
 
 /* Subtle chevron / paper texture overlay */
@@ -90,9 +90,7 @@ body::before {
   text-align: center;
   padding: 0 20px;
   position: relative;
-  background: linear-gradient(180deg, rgba(14, 14, 14, 0.45), rgba(14, 14, 14, 0.15)), url('assets/encabezado.jpg') no-repeat fixed;
-  background-size: cover;
-  background-position: center 20%;
+  background: #1a1210;
   color: #fff;
   overflow: hidden;
 }
@@ -102,6 +100,17 @@ body::before {
   inset: 0;
   background: radial-gradient(circle at center, rgba(255,255,255,.08), rgba(0,0,0,.32));
   z-index: 0;
+}
+
+/* Foto del hero inicial, difuminada para que la frase bíblica resalte
+   sobre ella. Escalada un poco para que el blur no deje ver el borde. */
+#inicio .hero-bg {
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,.08), rgba(0,0,0,.32)),
+    linear-gradient(180deg, rgba(14, 14, 14, 0.5), rgba(14, 14, 14, 0.3)),
+    url('assets/encabezado.jpg') no-repeat center 20% / cover;
+  filter: blur(7px);
+  transform: scale(1.08);
 }
 
 .hero > * {
