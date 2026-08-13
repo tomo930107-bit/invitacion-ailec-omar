@@ -49,13 +49,15 @@ body::before {
 .cita-card {
   max-width: 720px;
   margin: 18px auto 0;
-  padding: 0;
+  padding: 32px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  background: transparent;
-  border: none;
+  background: rgba(15, 15, 15, 0.42);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
 }
 
 .cita-ornamento {
@@ -90,7 +92,9 @@ body::before {
   text-align: center;
   padding: 0 20px;
   position: relative;
-  background: #1a1210;
+  background: linear-gradient(180deg, rgba(14, 14, 14, 0.45), rgba(14, 14, 14, 0.15)), url('assets/encabezado.jpg') no-repeat fixed;
+  background-size: cover;
+  background-position: center 20%;
   color: #fff;
   overflow: hidden;
 }
@@ -100,25 +104,6 @@ body::before {
   inset: 0;
   background: radial-gradient(circle at center, rgba(255,255,255,.08), rgba(0,0,0,.32));
   z-index: 0;
-}
-
-/* Foto del hero inicial, difuminada para que la frase bíblica resalte
-   sobre ella. Va en su propia capa (::before), separada de los
-   degradados, para no mezclar el filtro de blur con un background de
-   varias capas en una sola declaración. */
-#inicio.hero::before {
-  content: "";
-  position: absolute;
-  inset: -12px;
-  z-index: 0;
-  background: url('assets/encabezado-blur.jpg') no-repeat center 20% / cover;
-  filter: blur(7px);
-}
-
-#inicio .hero-bg {
-  background:
-    radial-gradient(circle at center, rgba(255,255,255,.08), rgba(0,0,0,.32)),
-    linear-gradient(180deg, rgba(14, 14, 14, 0.5), rgba(14, 14, 14, 0.3));
 }
 
 .hero > * {
