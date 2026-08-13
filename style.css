@@ -103,14 +103,22 @@ body::before {
 }
 
 /* Foto del hero inicial, difuminada para que la frase bíblica resalte
-   sobre ella. Escalada un poco para que el blur no deje ver el borde. */
+   sobre ella. Va en su propia capa (::before), separada de los
+   degradados, para no mezclar el filtro de blur con un background de
+   varias capas en una sola declaración. */
+#inicio.hero::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  z-index: 0;
+  background: url('assets/encabezado-blur.jpg') no-repeat center 20% / cover;
+  filter: blur(7px);
+}
+
 #inicio .hero-bg {
   background:
     radial-gradient(circle at center, rgba(255,255,255,.08), rgba(0,0,0,.32)),
-    linear-gradient(180deg, rgba(14, 14, 14, 0.5), rgba(14, 14, 14, 0.3)),
-    url('assets/encabezado.jpg') no-repeat center 20% / cover;
-  filter: blur(7px);
-  transform: scale(1.08);
+    linear-gradient(180deg, rgba(14, 14, 14, 0.5), rgba(14, 14, 14, 0.3));
 }
 
 .hero > * {
