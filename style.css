@@ -5,7 +5,7 @@ body {
   color: #4d3b2d;
   overflow: hidden;
   overflow-x: hidden;
-  background: linear-gradient(360deg, #f3eadc 0%, #c9b7bb 30%);
+  background: #fdf8ee;
 }
 
 /* Subtle chevron / paper texture overlay */
@@ -255,7 +255,7 @@ body::before {
 
 .phrase-block {
   padding: 70px 20px;
-  background: #d9cccf;
+  background: #fdf8ee;
 }
 
 .phrase-card {
@@ -476,7 +476,7 @@ body::before {
   margin: 0;
   padding: 0;
   display: block;
-  background: linear-gradient(135deg, #c9b7bb, #660619);
+  background: #660619;
 }
 
 .padres-grid {
@@ -490,7 +490,7 @@ body::before {
 .section-gap {
   width: 100%;
   height: clamp(48px, 7vw, 96px);
-  background: linear-gradient(135deg, #c9b7bb, #660619);
+  background: #660619;
 }
 
 .padres-card {
@@ -596,7 +596,7 @@ body::before {
   padding: 60px 20px;
   display: flex;
   justify-content: center;
-  background: linear-gradient(135deg, #c9b7bb, #660619);
+  background: #660619;
 }
 
 .venue-card {
@@ -692,7 +692,7 @@ body::before {
   aspect-ratio: 4 / 5;
   border-radius: 4px;
   overflow: hidden;
-  background: linear-gradient(135deg, #d9cccf, #c9b7bb);
+  background: #fdf8ee;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
 }
 .hospedaje-photo img {
@@ -1008,7 +1008,7 @@ body::before {
   justify-content: center;
   align-items: center;
   border-radius: 14px;
-  background: #c9b7bb;
+  background: #fdf8ee;
   color: #3a2620;
   text-decoration: none;
   font-weight: 600;
@@ -1045,7 +1045,7 @@ body::before {
   padding: 60px 20px;
   display: flex;
   justify-content: center;
-  background: linear-gradient(135deg, #c9b7bb, #660619);
+  background: #660619;
 }
 
 .clima-card {
@@ -1261,8 +1261,8 @@ body::before {
   width: 100%;
   max-width: 560px;
   padding: clamp(34px, 5vw, 56px);
-  background: linear-gradient(160deg, #322620, #1e1713);
-  border: 1px solid rgba(201, 168, 120, 0.32);
+  background: #660619;
+  border: 1px solid rgba(253, 248, 238, 0.32);
   border-radius: 20px;
   box-shadow: 0 22px 50px rgba(30, 20, 12, 0.34);
   text-align: center;
@@ -1273,7 +1273,7 @@ body::before {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(2.2rem, 4vw, 3rem);
   font-weight: 400;
-  color: #c9b7bb;
+  color: #fdf8ee;
   line-height: 1.2;
 }
 
@@ -1310,14 +1310,14 @@ body::before {
 
 .regalos-card .venue-btn {
   background: transparent;
-  border-color: rgba(227, 206, 206, 0.55);
-  color: #f0e4d2;
+  border-color: rgba(253, 248, 238, 0.55);
+  color: #fdf8ee;
 }
 .regalos-card .venue-btn:hover,
 .regalos-card .venue-btn:focus-visible {
-  background: #c9b7bb;
-  border-color: #c9b7bb;
-  color: #2a201a;
+  background: #fdf8ee;
+  border-color: #fdf8ee;
+  color: #660619;
 }
 
 
@@ -1534,7 +1534,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 .split-foto {
   position: relative;
   min-height: 320px;
-  background: linear-gradient(135deg, #d9cccf, #c9b7bb);
+  background: #fdf8ee;
 }
 .split-foto img {
   position: absolute;
@@ -1555,7 +1555,7 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 .rsvp-section {
   width: 100%;
   padding: clamp(56px, 8vw, 96px) 20px;
-  background: linear-gradient(135deg, #c9b7bb, #660619);
+  background: #660619;
 }
 
 .rsvp-card {
@@ -1873,8 +1873,8 @@ button[disabled] { opacity: 0.55; cursor: not-allowed; }
 footer {
   text-align: center;
   padding: 20px;
-  background: linear-gradient(135deg, #c9b7bb, #660619);
-  color: #4d3b2d;
+  background: #660619;
+  color: #fdf8ee;
   font-size: 0.95rem;
   letter-spacing: 0.08em;
 }
