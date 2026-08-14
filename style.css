@@ -1377,10 +1377,10 @@ body::before {
   justify-content: center;
   gap: 26px;
 }
-.vestimenta-iconos svg {
-  width: clamp(58px, 8vw, 78px);
-  height: auto;
-  fill: #710A0A;
+.vestimenta-iconos img {
+  width: clamp(74px, 11vw, 108px);
+  height: clamp(140px, 20vw, 200px);
+  object-fit: contain;
 }
 
 .vestimenta-lineas p {
@@ -1399,6 +1399,7 @@ body::before {
   box-shadow: 0 4px 12px rgba(60, 20, 25, 0.18);
 }
 .paleta span + span { margin-left: -10px; }
+.paleta-blanco { border: 1px solid rgba(113, 10, 10, 0.3); }
 
 .vestimenta-nota {
   margin: 0;
