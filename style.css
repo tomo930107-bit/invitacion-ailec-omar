@@ -613,7 +613,7 @@ body::before {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
-#ubicaciones .tab-content {
+#ubicaciones .tab-content:not(.hidden) {
   width: 100%;
   display: flex;
   justify-content: center;
