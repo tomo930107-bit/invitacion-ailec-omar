@@ -43,9 +43,9 @@
       <a href="#inicio">Inicio</a>
       <a href="#itinerario">Itinerario</a>
       <a href="#ubicaciones">Ubicaciones</a>
+      <a href="#vestimenta">Código de Vestimenta</a>
       <a href="#galeria">Galería de Fotos</a>
       <a href="#regalos">Mesa de Regalos</a>
-      <a href="#vestimenta">Código de Vestimenta</a>
       <a href="#canciones">Canciones</a>
       <a href="#contacto">Contactos</a>
     </nav>
@@ -284,33 +284,127 @@
       </div>
     </section>
 
-    <!-- UBICACIONES: TEMPLO -->
-    <section id="ubicaciones" class="block venue-section">
-      <div class="venue-card reveal">
-        <div class="venue-text">
-          <p class="venue-label">Ceremonia</p>
-          <h2 class="venue-title">Templo</h2>
-          <p class="venue-subtitle">Medalla Milagrosa</p>
-          <a class="btn venue-btn" href="https://maps.app.goo.gl/zTpaMUJcBHm1dU4L6" target="_blank" rel="noopener">Ir a ubicación</a>
+    <!-- UBICACIONES: CEREMONIA Y RECEPCIÓN (tabs) -->
+    <section id="ubicaciones" class="block venue-section tabs-grupo">
+      <div class="venue-tabbar reveal">
+        <button class="tab active" data-tab="ceremonia">Ceremonia</button>
+        <button class="tab" data-tab="recepcion">Recepción</button>
+      </div>
+
+      <div class="tab-content" id="tab-ceremonia">
+        <div class="venue-card reveal">
+          <div class="venue-text">
+            <p class="venue-label">Ceremonia</p>
+            <h2 class="venue-title">Templo</h2>
+            <p class="venue-subtitle">Medalla Milagrosa</p>
+            <a class="btn venue-btn" href="https://maps.app.goo.gl/zTpaMUJcBHm1dU4L6" target="_blank" rel="noopener">Ir a ubicación</a>
+          </div>
+          <div class="venue-photo">
+            <img src="assets/Templo.jpg" alt="Templo">
+          </div>
         </div>
-        <div class="venue-photo">
-          <img src="assets/Templo.jpg" alt="Templo">
+      </div>
+
+      <div class="tab-content hidden" id="tab-recepcion">
+        <div class="venue-card reveal">
+          <div class="venue-text">
+            <p class="venue-label">Celebración</p>
+            <h2 class="venue-title">Recepción</h2>
+            <p class="venue-subtitle">Hacienda del Cipres</p>
+            <a class="btn venue-btn" href="https://maps.app.goo.gl/veFSPX1JHBcf9jZ78" target="_blank" rel="noopener">Ir a ubicación</a>
+          </div>
+          <div class="venue-photo">
+            <img src="assets/Recepcion.jpg" alt="Recepción">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- UBICACIONES: RECEPCIÓN -->
-    <section id="recepcion" class="block venue-section venue-section--reverse">
-      <div class="venue-card reveal">
-        <div class="venue-photo">
-          <img src="assets/Recepcion.jpg" alt="Recepción">
+    <!-- CÓDIGO DE VESTIMENTA -->
+    <section id="vestimenta" class="block vestimenta">
+      <div class="vestimenta-card reveal">
+        <header class="vestimenta-header">
+          <p class="vestimenta-script">Código de</p>
+          <h2 class="vestimenta-titulo">Vestimenta</h2>
+        </header>
+
+        <div class="vestimenta-grid">
+          <div class="vestimenta-col">
+            <p class="vestimenta-script vestimenta-script--sm">Formal</p>
+            <div class="vestimenta-iconos">
+              <img src="assets/Traje.png" alt="Traje de gala" loading="lazy">
+              <img src="assets/Vestido.png" alt="Vestido de gala" loading="lazy">
+            </div>
+            <div class="vestimenta-lineas">
+              <p>Hombres: Traje completo</p>
+              <p>Mujeres: Vestido largo</p>
+            </div>
+          </div>
+
+          <div class="vestimenta-col">
+            <p class="vestimenta-script vestimenta-script--sm">Colores a evitar</p>
+            <div class="paleta">
+              <span style="background:#4A0606" title="Granate profundo"></span>
+              <span style="background:#710A0A" title="Granate"></span>
+              <span style="background:#A52F2F" title="Granate claro"></span>
+              <span class="paleta-blanco" style="background:#FFFFFF" title="Blanco"></span>
+            </div>
+            <p class="vestimenta-nota">Evitar tonos granate y sus derivados, y el color blanco</p>
+          </div>
         </div>
-        <div class="venue-text">
-          <p class="venue-label">Celebración</p>
-          <h2 class="venue-title">Recepción</h2>
-          <p class="venue-subtitle">Hacienda del Cipres</p>
-          <a class="btn venue-btn" href="https://maps.app.goo.gl/veFSPX1JHBcf9jZ78" target="_blank" rel="noopener">Ir a ubicación</a>
+      </div>
+    </section>
+
+    <!-- GALERÍA DE FOTOS -->
+    <section id="galeria" class="block historia-section">
+      <h2 class="reveal">Galería de Fotos</h2>
+
+      <div class="historia-carousel" id="historia-carousel">
+        <div class="historia-slide">
+          <div class="historia-foto"><img src="assets/historia-1.jpg" alt="Ailec y Omar"></div>
         </div>
+        <div class="historia-slide">
+          <div class="historia-foto"><img src="assets/historia-2.jpg" alt="Ailec y Omar" loading="lazy"></div>
+        </div>
+        <div class="historia-slide">
+          <div class="historia-foto"><img src="assets/historia-3.jpg" alt="Ailec y Omar" loading="lazy"></div>
+        </div>
+        <div class="historia-slide">
+          <div class="historia-foto"><img src="assets/historia-4.jpg" alt="Ailec y Omar" loading="lazy"></div>
+        </div>
+        <div class="historia-slide">
+          <div class="historia-foto"><img src="assets/historia-5.jpg" alt="Ailec y Omar" loading="lazy"></div>
+        </div>
+        <div class="historia-slide">
+          <div class="historia-foto"><img src="assets/historia-6.jpg" alt="Ailec y Omar" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="historia-controles">
+        <button class="historia-nav" data-dir="-1" aria-label="Momento anterior">&#10094;</button>
+        <div class="historia-dots"></div>
+        <button class="historia-nav" data-dir="1" aria-label="Momento siguiente">&#10095;</button>
+      </div>
+
+      <p class="historia-cierre reveal">Una historia que sigue escribiéndose, y queremos que formes parte de ella.</p>
+    </section>
+
+    <!-- MESA DE REGALOS -->
+    <section id="regalos" class="block regalos">
+      <div class="regalos-card reveal">
+        <h2 class="regalos-titulo">Mesa de Regalos</h2>
+        <p class="regalos-texto">
+          Tu presencia es el mejor regalo; si deseas hacernos un detalle,
+          estaremos muy agradecidos.
+        </p>
+
+        <div class="regalos-marca">
+          <img src="assets/liverpool.png" alt="Liverpool">
+        </div>
+
+        <p class="regalos-evento">Número de evento <strong>51990050</strong></p>
+
+        <a class="btn venue-btn" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51990050" target="_blank" rel="noopener">Ir a la mesa de regalos</a>
       </div>
     </section>
 
@@ -435,94 +529,6 @@
       </div>
     </section>
 
-    <!-- GALERÍA DE FOTOS -->
-    <section id="galeria" class="block historia-section">
-      <h2 class="reveal">Galería de Fotos</h2>
-
-      <div class="historia-carousel" id="historia-carousel">
-        <div class="historia-slide">
-          <div class="historia-foto"><img src="assets/historia-1.jpg" alt="Ailec y Omar"></div>
-        </div>
-        <div class="historia-slide">
-          <div class="historia-foto"><img src="assets/historia-2.jpg" alt="Ailec y Omar" loading="lazy"></div>
-        </div>
-        <div class="historia-slide">
-          <div class="historia-foto"><img src="assets/historia-3.jpg" alt="Ailec y Omar" loading="lazy"></div>
-        </div>
-        <div class="historia-slide">
-          <div class="historia-foto"><img src="assets/historia-4.jpg" alt="Ailec y Omar" loading="lazy"></div>
-        </div>
-        <div class="historia-slide">
-          <div class="historia-foto"><img src="assets/historia-5.jpg" alt="Ailec y Omar" loading="lazy"></div>
-        </div>
-        <div class="historia-slide">
-          <div class="historia-foto"><img src="assets/historia-6.jpg" alt="Ailec y Omar" loading="lazy"></div>
-        </div>
-      </div>
-
-      <div class="historia-controles">
-        <button class="historia-nav" data-dir="-1" aria-label="Momento anterior">&#10094;</button>
-        <div class="historia-dots"></div>
-        <button class="historia-nav" data-dir="1" aria-label="Momento siguiente">&#10095;</button>
-      </div>
-
-      <p class="historia-cierre reveal">Una historia que sigue escribiéndose, y queremos que formes parte de ella.</p>
-    </section>
-
-    <!-- MESA DE REGALOS -->
-    <section id="regalos" class="block regalos">
-      <div class="regalos-card reveal">
-        <h2 class="regalos-titulo">Mesa de Regalos</h2>
-        <p class="regalos-texto">
-          Tu presencia es el mejor regalo; si deseas hacernos un detalle,
-          estaremos muy agradecidos.
-        </p>
-
-        <div class="regalos-marca">
-          <img src="assets/liverpool.png" alt="Liverpool">
-        </div>
-
-        <p class="regalos-evento">Número de evento <strong>51990050</strong></p>
-
-        <a class="btn venue-btn" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51990050" target="_blank" rel="noopener">Ir a la mesa de regalos</a>
-      </div>
-    </section>
-
-    <!-- CÓDIGO DE VESTIMENTA -->
-    <section id="vestimenta" class="block vestimenta">
-      <div class="vestimenta-card reveal">
-        <header class="vestimenta-header">
-          <p class="vestimenta-script">Código de</p>
-          <h2 class="vestimenta-titulo">Vestimenta</h2>
-        </header>
-
-        <div class="vestimenta-grid">
-          <div class="vestimenta-col">
-            <p class="vestimenta-script vestimenta-script--sm">Formal</p>
-            <div class="vestimenta-iconos">
-              <img src="assets/Traje.png" alt="Traje de gala" loading="lazy">
-              <img src="assets/Vestido.png" alt="Vestido de gala" loading="lazy">
-            </div>
-            <div class="vestimenta-lineas">
-              <p>Hombres: Traje completo</p>
-              <p>Mujeres: Vestido largo</p>
-            </div>
-          </div>
-
-          <div class="vestimenta-col">
-            <p class="vestimenta-script vestimenta-script--sm">Colores a evitar</p>
-            <div class="paleta">
-              <span style="background:#4A0606" title="Granate profundo"></span>
-              <span style="background:#710A0A" title="Granate"></span>
-              <span style="background:#A52F2F" title="Granate claro"></span>
-              <span class="paleta-blanco" style="background:#FFFFFF" title="Blanco"></span>
-            </div>
-            <p class="vestimenta-nota">Evitar tonos granate y sus derivados, y el color blanco</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- A TOMAR EN CUENTA -->
     <section id="notas" class="block notas">
       <div class="notas-card reveal">
@@ -578,7 +584,7 @@
         </form>
         <p class="form-estado" id="rsvp-estado" role="status" aria-live="polite"></p>
 
-        <div class="rsvp-contacto">
+        <div class="rsvp-contacto tabs-grupo">
           <p class="rsvp-contacto-titulo">¿Tienes alguna duda? Escríbenos</p>
           <div class="rsvp-tabs">
             <button class="tab active" data-tab="novia">Ailec</button>

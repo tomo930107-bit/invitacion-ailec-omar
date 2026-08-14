@@ -595,8 +595,28 @@ body::before {
   margin: 0;
   padding: 60px 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(24px, 4vw, 36px);
   background: #660619;
+}
+
+/* Pestañas Ceremonia/Recepción: reusan .tab, pero necesitan un fondo
+   claro porque .tab está pensado para verse sobre tarjetas cream, no
+   directo sobre el vino de .venue-section. */
+.venue-tabbar {
+  display: inline-flex;
+  gap: 8px;
+  padding: 6px;
+  background: #fdf8ee;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+#ubicaciones .tab-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .venue-card {
@@ -682,7 +702,6 @@ body::before {
 
 @media (max-width: 760px) {
   .venue-card { grid-template-columns: 1fr; }
-  .venue-section--reverse .venue-card { grid-template-columns: 1fr; }
   .venue-photo img { aspect-ratio: 16 / 10; }
 }
 

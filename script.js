@@ -403,13 +403,17 @@ document.getElementById('song-form')?.addEventListener('submit', async (e) => {
   }
 });
 
-// Tabs Novia/Novio
-document.querySelectorAll('.tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
-    tab.classList.add('active');
-    document.getElementById('tab-' + tab.dataset.tab).classList.remove('hidden');
+// Tabs (Ailec/Omar, Ceremonia/Recepción): cada .tabs-grupo funciona por su
+// cuenta, para que activar unas pestañas no oculte las de otro grupo.
+document.querySelectorAll('.tabs-grupo').forEach(grupo => {
+  const tabs = grupo.querySelectorAll('.tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      grupo.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab)?.classList.remove('hidden');
+    });
   });
 });
 
