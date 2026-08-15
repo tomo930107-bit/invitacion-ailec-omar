@@ -412,7 +412,13 @@ document.querySelectorAll('.tabs-grupo').forEach(grupo => {
       tabs.forEach(t => t.classList.remove('active'));
       grupo.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
       tab.classList.add('active');
-      document.getElementById('tab-' + tab.dataset.tab)?.classList.remove('hidden');
+      const panel = document.getElementById('tab-' + tab.dataset.tab);
+      panel?.classList.remove('hidden');
+      // Si el panel estaba oculto desde que cargó la página, sus elementos
+      // .reveal nunca cruzaron el IntersectionObserver (display:none no
+      // cuenta como "visible"), así que quedarían transparentes para
+      // siempre. Se muestran directo al cambiar de pestaña.
+      panel?.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
     });
   });
 });
