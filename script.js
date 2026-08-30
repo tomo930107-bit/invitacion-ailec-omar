@@ -88,6 +88,20 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('No se pudo cargar el audio:', a.currentSrc || a.src);
   });
   marcarEstadoAudio();
+
+  // Pausar al bloquear el celular o minimizar/cambiar de pestaña, y
+  // reanudar solo si sonaba justo antes de ocultarse.
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (!a.paused) {
+        a.dataset.pausadaPorOcultarse = '1';
+        a.pause();
+      }
+    } else if (a.dataset.pausadaPorOcultarse) {
+      delete a.dataset.pausadaPorOcultarse;
+      reproducirMusica();
+    }
+  });
 });
 
 // Menú

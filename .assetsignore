@@ -1,9 +1,11 @@
 .git/
 .github/
 .claude/
+.wrangler/
 node_modules/
 wrangler.toml
 .gitignore
 .assetsignore
 *.md
 apps-script.gs
+script.zip
