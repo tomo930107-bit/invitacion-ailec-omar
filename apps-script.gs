@@ -380,7 +380,7 @@ function generarEnlacesWhatsapp() {
     const enlace = URL_INVITACION + '?i=' + token;
     const mensaje =
       '¡Hola!\n\n' +
-      'Con mucho cariño queremos invitarte a celebrar nuestra boda. Será *el viernes 18 de diciembre de 2026 a las 4:30 pm*.\n\n' +
+      'Con mucho cariño queremos invitarte a celebrar nuestra boda. Será *el viernes 18 de diciembre de 2026 a las 6:30 pm*.\n\n' +
       'Aquí puedes ver todos los detalles y confirmar tu asistencia:\n\n' + enlace + '\n\n' +
       '¡Te esperamos!\n' +
       'Ailec & Omar';

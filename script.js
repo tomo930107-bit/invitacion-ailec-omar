@@ -496,7 +496,7 @@ function debounce(fn, wait = 100) {
 }
 
 function updateCountdown() {
-  const target = new Date('2026-12-18T16:30:00');
+  const target = new Date('2026-12-18T18:30:00');
   const now = new Date();
   const diff = target.getTime() - now.getTime();
   const daysEl = document.getElementById('cd-days');
@@ -559,8 +559,8 @@ window.addEventListener('load', () => {
   const eventTitle = 'Boda de Ailec y Omar';
   const eventDescription = 'Ceremonia de boda en la iglesia y celebración con familiares y amigos.';
   const eventLocation = 'Iglesia de la Ciudad, Saltillo';
-  const start = new Date('2026-12-18T16:30:00');
-  const end = new Date('2026-12-18T18:30:00');
+  const start = new Date('2026-12-18T18:30:00');
+  const end = new Date('2026-12-18T20:30:00');
   const formatDate = (date) => date.toISOString().replace(/-|:|\.00Z/g, '');
 
   const gmailUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&details=${encodeURIComponent(eventDescription)}&location=${encodeURIComponent(eventLocation)}&dates=${formatDate(start)}/${formatDate(end)}`;
