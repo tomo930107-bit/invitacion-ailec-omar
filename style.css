@@ -1384,7 +1384,7 @@ body::before {
   box-shadow: 0 4px 12px rgba(60, 20, 25, 0.18);
 }
 .paleta span + span { margin-left: -10px; }
-.paleta-blanco { border: 1px solid rgba(113, 10, 10, 0.3); }
+.paleta-blanco { border: 1px solid rgba(92, 31, 46, 0.3); }
 
 .vestimenta-nota {
   margin: 0;
