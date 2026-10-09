@@ -13,7 +13,7 @@
 
 // Fecha límite para poder confirmar/editar el RSVP ('' = sin límite).
 // Formato: 'YYYY-MM-DDTHH:mm:ss' en la zona horaria del proyecto de Apps Script.
-const FECHA_CORTE = '2026-11-20T23:59:59';
+const FECHA_CORTE = '2026-10-31T23:59:59';
 
 // Dirección donde está publicada la invitación, sin barra final.
 // Se usa solo para armar los enlaces de WhatsApp (generarEnlacesWhatsapp).
