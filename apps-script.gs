@@ -13,7 +13,7 @@
 
 // Fecha límite para poder confirmar/editar el RSVP ('' = sin límite).
 // Formato: 'YYYY-MM-DDTHH:mm:ss' en la zona horaria del proyecto de Apps Script.
-const FECHA_CORTE = '2026-10-31T23:59:59';
+const FECHA_CORTE = '2026-11-04T23:59:59';
 
 // Dirección donde está publicada la invitación, sin barra final.
 // Se usa solo para armar los enlaces de WhatsApp (generarEnlacesWhatsapp).
@@ -37,13 +37,14 @@ const COL = {
   MENSAJE: 9,
   FECHA_RESPUESTA: 10,
   ENLACE_WHATSAPP: 11,
+  RECORDATORIO_WHATSAPP: 12,
 };
 
 const ENCABEZADOS = {
   [HOJA_INVITADOS]: [
     'token', 'nombre_display', 'tipo', 'pases_max', 'pases_confirmados',
     'estatus', 'acompanantes', 'telefono', 'mensaje', 'fecha_respuesta',
-    'enlace_whatsapp',
+    'enlace_whatsapp', 'recordatorio_whatsapp',
   ],
   [HOJA_LOG]: ['timestamp', 'token', 'accion', 'resultado'],
   [HOJA_CANCIONES]: ['Fecha', 'Canción sugerida', 'Sugerida por'],
@@ -393,4 +394,48 @@ function generarEnlacesWhatsapp() {
   }
 
   SpreadsheetApp.getActiveSpreadsheet().toast(generados + ' enlace(s) de WhatsApp generado(s).');
+}
+
+/* ==================================================================
+   UTILIDAD MANUAL — RECORDATORIO
+   Igual que generarEnlacesWhatsapp(), pero solo para los invitados que
+   siguen en estatus "pendiente": arma un link con un mensaje que les
+   recuerda la fecha límite para confirmar. A quienes ya respondieron
+   se les borra el recordatorio para no mandárselo por error.
+================================================================== */
+function generarRecordatoriosWhatsapp() {
+  const h = hoja(HOJA_INVITADOS);
+  const filas = h.getDataRange().getValues();
+
+  if (!filas[0][COL.RECORDATORIO_WHATSAPP - 1]) {
+    h.getRange(1, COL.RECORDATORIO_WHATSAPP).setValue('recordatorio_whatsapp').setFontWeight('bold');
+  }
+
+  let generados = 0;
+  for (let i = 1; i < filas.length; i++) {
+    const celda = h.getRange(i + 1, COL.RECORDATORIO_WHATSAPP);
+    const token = normalizarToken(filas[i][COL.TOKEN - 1]);
+    const estatus = String(filas[i][COL.ESTATUS - 1] || 'pendiente').trim();
+    if (!token || estatus !== 'pendiente') {
+      celda.clearContent();
+      continue;
+    }
+
+    const nombre = String(filas[i][COL.NOMBRE - 1] || '').trim();
+    const telefono = String(filas[i][COL.TELEFONO - 1] || '').replace(/[^0-9]/g, '');
+
+    const enlace = URL_INVITACION + '?i=' + token;
+    const mensaje =
+      (nombre ? '¡Hola, ' + nombre + '!' : '¡Hola!') + '\n\n' +
+      'Esperamos que estés muy bien. Te recordamos que tienes hasta el *miércoles 4 de noviembre* para confirmar tu asistencia a nuestra boda del *viernes 18 de diciembre*.\n\n' +
+      'Puedes hacerlo aquí, solo toma un minuto:\n\n' + enlace + '\n\n' +
+      'Tu respuesta nos ayuda mucho a preparar cada detalle. ¡Gracias!\n' +
+      'Ailec & Omar';
+
+    const base = telefono ? 'https://wa.me/' + telefono : 'https://wa.me/';
+    celda.setValue(base + '?text=' + encodeURIComponent(mensaje));
+    generados++;
+  }
+
+  SpreadsheetApp.getActiveSpreadsheet().toast(generados + ' recordatorio(s) generado(s) para invitados pendientes.');
 }
